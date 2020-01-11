@@ -35,7 +35,6 @@ chrome.runtime.onInstalled.addListener(function() {
           actions: [new chrome.declarativeContent.ShowPageAction()]
     }]);
   });
-  
   chrome.contextMenus.create({
     id: 'saveCodeSnippet',
     title: 'Save code snippet',
