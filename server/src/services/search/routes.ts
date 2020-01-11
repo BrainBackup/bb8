@@ -13,5 +13,15 @@ export default [
         res.status(200).send(result);
       }
     ]
+  },
+  {
+    path: "/api/v1/save",
+    method: "get",
+    handler: [
+      async ({ query }: Request, res: Response) => {
+        // const result = await getPlacesByName(query.q);
+        res.status(200).send(query);
+      }
+    ]
   }
 ];

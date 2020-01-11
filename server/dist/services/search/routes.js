@@ -21,6 +21,16 @@ exports.default = [
                 res.status(200).send(result);
             })
         ]
+    },
+    {
+        path: "/api/v1/save",
+        method: "get",
+        handler: [
+            ({ query }, res) => __awaiter(this, void 0, void 0, function* () {
+                // const result = await getPlacesByName(query.q);
+                res.status(200).send(query);
+            })
+        ]
     }
 ];
 //# sourceMappingURL=routes.js.map

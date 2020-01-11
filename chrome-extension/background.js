@@ -1,27 +1,27 @@
-function createMenu() {
-  const menus = [
-    { id: 'devtools-left', title: 'To left' },
-    { id: 'devtools-right', title: 'To right' },
-    { id: 'devtools-bottom', title: 'To bottom' },
-    { id: 'devtools-panel', title: 'Open in a panel (enable in browser settings)' },
-    { id: 'devtools-remote', title: 'Open Remote DevTools' }
-  ];
+// function createMenu() {
+//   const menus = [
+//     { id: 'devtools-left', title: 'To left' },
+//     { id: 'devtools-right', title: 'To right' },
+//     { id: 'devtools-bottom', title: 'To bottom' },
+//     { id: 'devtools-panel', title: 'Open in a panel (enable in browser settings)' },
+//     { id: 'devtools-remote', title: 'Open Remote DevTools' }
+//   ];
 
-  let shortcuts = {};
-  chrome.commands.getAll(commands => {
-    commands.forEach(({ name, shortcut }) => {
-      shortcuts[name] = shortcut;
-    });
+//   let shortcuts = {};
+//   chrome.commands.getAll(commands => {
+//     commands.forEach(({ name, shortcut }) => {
+//       shortcuts[name] = shortcut;
+//     });
 
-    menus.forEach(({ id, title }) => {
-      chrome.contextMenus.create({
-        id: id,
-        title: title + (shortcuts[id] ? ' (' + shortcuts[id] + ')' : ''),
-        contexts: ['all']
-      });
-    });
-  });
-}
+//     menus.forEach(({ id, title }) => {
+//       chrome.contextMenus.create({
+//         id: id,
+//         title: title + (shortcuts[id] ? ' (' + shortcuts[id] + ')' : ''),
+//         contexts: ['all']
+//       });
+//     });
+//   });
+// }
 chrome.runtime.onInstalled.addListener(function() {
   chrome.storage.sync.set({color: '#3aa757'}, function() {
     console.log('The color is green.');
@@ -36,11 +36,21 @@ chrome.runtime.onInstalled.addListener(function() {
     }]);
   });
   
-  chrome.contextMenus.onClicked.addListener(({ menuItemId }) => {
-    console.log('yOHAY DATAY  ');
-    debug;
+  chrome.contextMenus.create({
+    id: 'saveCodeSnippet',
+    title: 'Save code snippet',
+    contexts: ['all']
+  });
+  chrome.contextMenus.create({
+    id: 'highlight',
+    title: 'Highlight',
+    contexts: ['all']
+  });
+  chrome.contextMenus.onClicked.addListener(function(data) {
+    console.log('adding listner', data)
+    //http://localhost:3009/api/v1/save?url=asd
   });
 });
-chrome.runtime.onInstalled.addListener(() => {
-  createMenu();
-});
+// chrome.runtime.onInstalled.addListener(() => {
+//   createMenu();
+// });
