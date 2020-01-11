@@ -27,6 +27,8 @@ exports.default = [
         method: "get",
         handler: [
             ({ query }, res) => __awaiter(this, void 0, void 0, function* () {
+                console.log('==========', query);
+                // TODO: add some processing to it. break it from here to new service.
                 // const result = await getPlacesByName(query.q);
                 res.status(200).send(query);
             })

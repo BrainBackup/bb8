@@ -48,7 +48,14 @@ chrome.runtime.onInstalled.addListener(function() {
   });
   chrome.contextMenus.onClicked.addListener(function(data) {
     console.log('adding listner', data)
-    //http://localhost:3009/api/v1/save?url=asd
+//     editable: false
+// frameId: 0
+// menuItemId: "saveCodeSnippet"
+// pageUrl: "chrome://extensions/"
+// selectionText: "lflamoameidbdinphdjhmpbkimfobcdc"
+    fetch(`http://localhost:3009/api/v1/save?pageUrl=${data.pageUrl}&action=${data.menuItemId}&selectionText=${data.selectionText}`)
+    .then(da => console.log('data', da));
+    //
   });
 });
 // chrome.runtime.onInstalled.addListener(() => {
