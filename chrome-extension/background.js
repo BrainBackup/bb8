@@ -54,12 +54,29 @@ chrome.runtime.onInstalled.addListener(function() {
 // pageUrl: "chrome://extensions/"
 // selectionText: "lflamoameidbdinphdjhmpbkimfobcdc"
 // ?pageUrl=${data.pageUrl}&action=${data.menuItemId}&selectionText=${data.selectionText}
-    fetch(`http://localhost:3009/api/v1/save`, {
-      method: 'POST',
-      body: JSON.stringify(data)
-    })
-    .then(da => console.log('data', da));
-    //
+    const url = 'http://localhost:3009/api/v1/save';
+    fetch(url, {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'same-origin', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: 'follow', // manual, *follow, error
+      referrerPolicy: 'no-referrer', // no-referrer, *client
+      body: JSON.stringify({
+        menuItemId: data.menuItemId,
+        selectionText: data.selectionText,
+        pageUrl: data.pageUrl
+      }) // body data type must match "Content-Type" header
+    }).then(d => console.log('response from server',d))
+    .catch(err => console.error(err));
+    // fetch(`http://localhost:3009/api/v1/save`, {
+    //   method: 'POST',
+    //   body: JSON.stringify(data)
+    // })
   });
 });
 // chrome.runtime.onInstalled.addListener(() => {
