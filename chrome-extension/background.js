@@ -35,7 +35,7 @@ chrome.runtime.onInstalled.addListener(function() {
           actions: [new chrome.declarativeContent.ShowPageAction()]
     }]);
   });
-  
+
   chrome.contextMenus.create({
     id: 'saveCodeSnippet',
     title: 'Save code snippet',
@@ -53,7 +53,11 @@ chrome.runtime.onInstalled.addListener(function() {
 // menuItemId: "saveCodeSnippet"
 // pageUrl: "chrome://extensions/"
 // selectionText: "lflamoameidbdinphdjhmpbkimfobcdc"
-    fetch(`http://localhost:3009/api/v1/save?pageUrl=${data.pageUrl}&action=${data.menuItemId}&selectionText=${data.selectionText}`)
+// ?pageUrl=${data.pageUrl}&action=${data.menuItemId}&selectionText=${data.selectionText}
+    fetch(`http://localhost:3009/api/v1/save`, {
+      method: 'POST',
+      body: JSON.stringify(data)
+    })
     .then(da => console.log('data', da));
     //
   });

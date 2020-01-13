@@ -5,13 +5,14 @@ import { saveData } from "./DataController";
 export default [
   {
     path: "/api/v1/save",
-    method: "get",
+    method: "post",
     handler: [
-      async ({ query }: Request, res: Response) => {
-        console.log('==========', query)
+      async (req: Request, res: Response) => {
+        console.log('==========', req.body)
         // TODO: add some processing to it. break it from here to new service.
-        const result = await saveData(query);
-        res.status(200).send(query);
+        // const result = await saveData(body);
+        res.status(200).send('body');
+        // res.status(200).send(body);
       }
     ]
   }
