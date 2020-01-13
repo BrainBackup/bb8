@@ -1,8 +1,9 @@
 import { Client, ApiResponse, RequestParams } from '@elastic/elasticsearch'
-const client = new Client({ node: 'http://localhost:9200' }); // TODO: break into configuration
-// TODO: break to a singleton and import here.
+// // TODO: break to a singleton and import here.
+import Elastic from '../../helpers/Elastic';
 
 async function run (): Promise<any> {
+    const client = Elastic();
     // Let's start by indexing some data
     const doc1: RequestParams.Index = {
       index: 'game-of-thrones',
@@ -61,20 +62,20 @@ export const saveData = async (data: any) => {
     console.log(data);
     // TODO: define and create index.
     // TODO: insert to index
-    // await run()
+    await run()
     return data;
 }
 export const fetchData = async (params: any) => {
-    client
-    .search(params)
-    .then((result: ApiResponse) => {
-      console.log(result.body.hits.hits)
-      return result.body.hits.hits;
-    })
-    .catch((err: Error) => {
-      console.log(err)
-      return err;
-    })
+    // client
+    // .search(params)
+    // .then((result: ApiResponse) => {
+    //   console.log(result.body.hits.hits)
+    //   return result.body.hits.hits;
+    // })
+    // .catch((err: Error) => {
+    //   console.log(err)
+    //   return err;
+    // })
 }
 
 
