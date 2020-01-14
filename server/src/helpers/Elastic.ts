@@ -8,26 +8,28 @@ const GetClient = () => {
 }
 const getIndexes = (): RequestParams.Index => {
     const doc1: RequestParams.Index = {
-        index: ElasticShcems.Test,
-        body: {
-            [ElasticShcems.Test]: {
-                "properties": {
-                    "source_id": {
-                        "type": "keyword"
-                    },
-                    "source_type": {
-                        "type": "keyword"
-                    },
-                    "author_id": {
-                        "type": "keyword"
-                    },
-                    "author_name": {
-                        "type": "text"
-                    }
-                }
-            }
-        }
+        index: 'elasticshcems',
+        body: {}
     };
     return doc1; //return array
 }
 export default { GetClient, getIndexes };
+// ,
+// body: {
+//     ['ElasticShcems.Test']: {
+//         "properties": {
+//             "source_id": {
+//                 "type": "keyword"
+//             },
+//             "source_type": {
+//                 "type": "keyword"
+//             },
+//             "author_id": {
+//                 "type": "keyword"
+//             },
+//             "author_name": {
+//                 "type": "text"
+//             }
+//         }
+//     }
+// }
