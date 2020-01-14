@@ -1,6 +1,5 @@
 import { Client, ApiResponse, RequestParams } from '@elastic/elasticsearch'
 import Elastic from '../../helpers/Elastic'; // TODO: add node path for lookup
-import ElasticShcems from '../../helpers/ElasticShcems';
 
 interface Snippet {
   pageUrl: String,
@@ -10,7 +9,7 @@ interface Snippet {
 export const fetch = async (params: any) => {
   try {
     const params1: RequestParams.Search = {
-      index: ElasticShcems.Snippets.index
+      index: Elastic.Schemes.Snippets.index
     }
     const client = Elastic.GetClient();
     const result: ApiResponse = await client.search(params1);
@@ -24,7 +23,7 @@ export const create = async (data: Snippet) => {
   try {
     const client = Elastic.GetClient();
     const doc: RequestParams.Index = {
-      index: ElasticShcems.Snippets.index,
+      index: Elastic.Schemes.Snippets.index,
       refresh: "true",
       body: {
         selectionText: data.selectionText,
