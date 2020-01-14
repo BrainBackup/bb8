@@ -9,6 +9,7 @@ const utils_1 = require("./utils");
 const middleware_1 = __importDefault(require("./middleware"));
 const errorHandlers_1 = __importDefault(require("./middleware/errorHandlers"));
 const services_1 = __importDefault(require("./services"));
+const app_1 = __importDefault(require("./app"));
 process.on("uncaughtException", e => {
     console.log(e);
     process.exit(1);
@@ -23,5 +24,6 @@ utils_1.applyRoutes(services_1.default, router);
 utils_1.applyMiddleware(errorHandlers_1.default, router);
 const { PORT = 3009 } = process.env;
 const server = http_1.default.createServer(router);
+app_1.default.init();
 server.listen(PORT, () => console.log(`Server is running http://localhost:${PORT}...`));
 //# sourceMappingURL=server.js.map

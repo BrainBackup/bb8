@@ -54,7 +54,7 @@ chrome.runtime.onInstalled.addListener(function() {
 // pageUrl: "chrome://extensions/"
 // selectionText: "lflamoameidbdinphdjhmpbkimfobcdc"
 // ?pageUrl=${data.pageUrl}&action=${data.menuItemId}&selectionText=${data.selectionText}
-    const url = 'http://localhost:3009/api/v1/save';
+    const url = 'http://localhost:3009/api/v1/snippets';
     fetch(url, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, *cors, same-origin

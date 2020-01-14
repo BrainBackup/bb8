@@ -1,14 +1,19 @@
-// import redis from 'redis';
-import { Client, ApiResponse, RequestParams } from '@elastic/elasticsearch'
-const client = new Client({ node: 'http://localhost:9200' }); // TODO: break into configuration
-// TODO: break to a singleton and import here.
+import { Client as NativeClient, ApiResponse, RequestParams } from '@elastic/elasticsearch'
+const client = new NativeClient({ node: 'http://localhost:9200' }); // TODO: break into configuration
 
 
 //TODO: load redis host from nconf
-const get = () => {
+const GetClient = () => {
     return client;
 }
-export default get;
-// module.exports = function() {
-//     return client;
-// };
+const getIndexes = () => {
+    const doc1: RequestParams.Index = {
+        index: 'game-of-thrones',
+        body: {
+            character: 'Ned Stark',
+            quote: 'Winter is coming.'
+        }
+    };
+    return doc1; //return array
+}
+export default { GetClient, getIndexes };

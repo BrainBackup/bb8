@@ -1,4 +1,4 @@
 import searchRoutes from "./search/routes";
-import dataRoutes from './data/routes';
+import snippetsRoutes from './snippets/routes';
 
-export default [...searchRoutes, ...dataRoutes];
+export default [...searchRoutes, ...snippetsRoutes];

@@ -11,3 +11,4 @@ Contribution is more than welcome.
 `npm run dev`
 [ ] run elasticsearch: `./run_elastic.sh` 
 
+[ ] TODO: add one docker-compose to rule them  all.

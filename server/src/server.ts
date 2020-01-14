@@ -4,6 +4,7 @@ import { applyMiddleware, applyRoutes } from "./utils";
 import middleware from "./middleware";
 import errorHandlers from "./middleware/errorHandlers";
 import routes from "./services";
+import app from './app';
 
 process.on("uncaughtException", e => {
   console.log(e);
@@ -22,6 +23,7 @@ applyMiddleware(errorHandlers, router);
 
 const { PORT = 3009 } = process.env;
 const server = http.createServer(router);
+app.init();
 
 server.listen(PORT, () =>
   console.log(`Server is running http://localhost:${PORT}...`)
