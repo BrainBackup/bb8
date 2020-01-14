@@ -1,14 +1,12 @@
 import { Client, ApiResponse, RequestParams } from '@elastic/elasticsearch'
 import Elastic from '../helpers/Elastic'; // TODO: add node path for lookup
+import ElasticShcems from '../helpers/ElasticShcems';
 const body =  {
     "properties": {
         "selectionText": {
             "type": "text"
         },
         "pageUrl": {
-            "type": "text"
-        },
-        "id": {
             "type": "text"
         }
     }
@@ -28,10 +26,10 @@ const body =  {
     // }
 const init = async (): Promise<any> => {
     try {
+        // TODO: add check if index exist
         const client = Elastic.GetClient();
         await client.indices.create(Elastic.getIndexes())
-        client.indices.putMapping({ index:"elasticshcems", body });
-        // await client.index(Elastic.getIndexes())
+        client.indices.putMapping({ ...ElasticShcems.Snippets });
     }
     catch(err) {
         console.error(err.meta.body.error);
