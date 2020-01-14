@@ -37,6 +37,7 @@
     "@types/request-promise": "^4.1.42",
     "@types/supertest": "^2.0.7",
     "@types/swagger-ui-express": "^3.0.0",
+    "@types/uuid": "^3.4.6",
     "compression": "^1.7.3",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
@@ -47,7 +48,8 @@
     "supertest": "^3.4.1",
     "swagger-ui-express": "^4.0.2",
     "tsc-watch": "^1.0.31",
-    "typescript": "^3.2.2"
+    "typescript": "^3.2.2",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",

@@ -2,11 +2,22 @@ import { Client, ApiResponse, RequestParams } from '@elastic/elasticsearch'
 import Elastic from '../helpers/Elastic'; // TODO: add node path for lookup
 const body =  {
     "properties": {
-        "email": {
-            "type": "keyword"
+        "selectionText": {
+            "type": "text"
+        },
+        "pageUrl": {
+            "type": "text"
+        },
+        "id": {
+            "type": "text"
         }
     }
 };
+// {
+//     "menuItemId": "saveCodeSnippet",
+//     "saveCodeSnippet": "lflamoameidbdinphdjhmpbkimfobcdc",
+//     "pageUrl": "chrome://extensions/"
+// }
 // in case the index doesnt exist
     //     "elasticshcems": {
     //         "mappings": {

@@ -1,5 +1,6 @@
 import { Client, ApiResponse, RequestParams } from '@elastic/elasticsearch'
 import Elastic from '../../helpers/Elastic'; // TODO: add node path for lookup
+import uuid from 'uuid/v4';
 
 // async function run (): Promise<any> {
 //     const client = Elastic.GetClient();
@@ -57,10 +58,15 @@ import Elastic from '../../helpers/Elastic'; // TODO: add node path for lookup
 //         return err;
 //       })
 //   }
+interface Snippet {
+  pageUrl: String,
+  selectionText: String,
+  menuItemId: String
+}
 export const fetch = async (params: any) => {
   try {
     const params1: RequestParams.Search = { // TODO: change this
-      index: 'game-of-thrones'
+      index: 'elasticshcems'
     }
     const client = Elastic.GetClient();
     const result: ApiResponse = await client.search(params1);
@@ -81,12 +87,24 @@ export const fetch = async (params: any) => {
       //   return err;
       // })
   }
-  export const create = async (data: any) => {
+  export const create = async (data: Snippet) => {
     console.log(data);
-    // TODO: define and create index.
-    // TODO: insert to index
-    // await run()
-    return data;
+    const id: String = uuid();
+    const client = Elastic.GetClient();
+    const doc: RequestParams.Index = {
+      index: 'elasticshcems',
+      // here we are forcing an index refresh,
+      // otherwise we will not get any result
+      // in the consequent search
+      refresh: "true",
+      body: {
+        selectionText: data.selectionText,
+        pageUrl: data.pageUrl,
+        id: uuid()
+      }
+    }
+    await client.index(doc);
+    return 'done';
 }
 
 
