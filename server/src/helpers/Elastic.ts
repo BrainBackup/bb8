@@ -66,11 +66,6 @@ const getSchemes = (): Array<RequestParams.Index> => {
         }
         return doc;
     })
-    // const doc: RequestParams.Index = {
-    //     index: Schemes.Snippets.index,
-    //     body: {}
-    // };
-    // return doc; //return array
     return indices;
 }
 
