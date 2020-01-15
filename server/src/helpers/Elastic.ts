@@ -35,8 +35,8 @@ const Test: Scheme = {
     body: Object.create({})
 }
 const Schemes: Array<Scheme> = [Snippets, Test];
-const SchemesNameToIndices = convertArrayToObject(Schemes.map(scheme => scheme.index), 'index');
-console.log('SchemesNameToIndices', SchemesNameToIndices);
+const SchemesNameToIndices = convertArrayToObject(Schemes, 'index');
+console.log(SchemesNameToIndices)
 const SchemesOld = {
     Snippets: {
         index: 'snippets',
@@ -59,7 +59,7 @@ const SchemesOld = {
 const GetClient = () => {
     return client;
 }
-const getIndices = (): Array<RequestParams.Index> => {
+const getSchemes = (): Array<RequestParams.Index> => {
     const indices: Array<RequestParams.Index> = Schemes.map(scheme => {
         const doc: RequestParams.Index = {
             ...scheme
@@ -74,4 +74,4 @@ const getIndices = (): Array<RequestParams.Index> => {
     return indices;
 }
 
-export default { GetClient, getIndices, Schemes, SchemesOld, SchemesNameToIndices };
+export default { GetClient, getSchemes, Schemes, SchemesOld, SchemesNameToIndices };
