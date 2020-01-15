@@ -1,7 +1,43 @@
 import { Client as NativeClient, ApiResponse, RequestParams } from '@elastic/elasticsearch'
 const client = new NativeClient({ node: 'http://localhost:9200' }); // TODO: break into configuration
 
-const Schemes = {
+const convertArrayToObject = (array: any, key: string) => {
+    const initialValue = {};
+    return array.reduce((obj: any, item: any) => {
+        return {
+        ...obj,
+        [item[key]]: item,
+        };
+    }, initialValue);
+};
+interface Body {
+    properties: Object
+}
+interface Scheme {
+    index: string,
+    body: Body
+}
+const Snippets: Scheme = {
+    index: 'snippets',
+    body: {
+        "properties": {
+            "selectionText": {
+                "type": "text"
+            },
+            "pageUrl": {
+                "type": "text"
+            }
+        }
+    }
+}
+const Test: Scheme = {
+    index: 'test',
+    body: Object.create({})
+}
+const Schemes: Array<Scheme> = [Snippets, Test];
+const SchemesNameToIndices = convertArrayToObject(Schemes.map(scheme => scheme.index), 'index');
+console.log('SchemesNameToIndices', SchemesNameToIndices);
+const SchemesOld = {
     Snippets: {
         index: 'snippets',
         body: {
@@ -15,17 +51,27 @@ const Schemes = {
             }
         }
     },
-    Test: 'test'
+    Test: {
+        index: 'test',
+        body: {}
+    }
 };
 const GetClient = () => {
     return client;
 }
-const getIndexes = (): RequestParams.Index => {
-    const doc1: RequestParams.Index = {
-        index: Schemes.Snippets.index,
-        body: {}
-    };
-    return doc1; //return array
+const getIndices = (): Array<RequestParams.Index> => {
+    const indices: Array<RequestParams.Index> = Schemes.map(scheme => {
+        const doc: RequestParams.Index = {
+            ...scheme
+        }
+        return doc;
+    })
+    // const doc: RequestParams.Index = {
+    //     index: Schemes.Snippets.index,
+    //     body: {}
+    // };
+    // return doc; //return array
+    return indices;
 }
 
-export default { GetClient, getIndexes, Schemes };
+export default { GetClient, getIndices, Schemes, SchemesOld, SchemesNameToIndices };

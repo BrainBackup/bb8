@@ -9,8 +9,10 @@ const init = async (): Promise<any> => {
         //     index: Elastic.Schemes.Snippets.index
         // }
         // const result: ApiResponse = await client.indices.exists({ index: Elastic.Schemes.Snippets.index })
-        await client.indices.create(Elastic.getIndexes())
-        client.indices.putMapping({ ...Elastic.Schemes.Snippets });
+        const indices = Elastic.getIndices();
+        await Promise.all(indices.map(index => client.indices.create()))
+        // await client.indices.create() //TODO: change to Promise.all
+        client.indices.putMapping({ ...Elastic.SchemesOld.Snippets });
     }
     catch(err) {
         console.error(err.meta.body.error);

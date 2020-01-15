@@ -9,7 +9,7 @@ interface Snippet {
 export const fetch = async (params: any) => {
   try {
     const params1: RequestParams.Search = {
-      index: Elastic.Schemes.Snippets.index
+      index: Elastic.SchemesOld.Snippets.index
     }
     const client = Elastic.GetClient();
     const result: ApiResponse = await client.search(params1);
@@ -23,7 +23,7 @@ export const create = async (data: Snippet) => {
   try {
     const client = Elastic.GetClient();
     const doc: RequestParams.Index = {
-      index: Elastic.Schemes.Snippets.index,
+      index: Elastic.SchemesOld.Snippets.index,
       refresh: "true",
       body: {
         selectionText: data.selectionText,
