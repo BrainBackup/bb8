@@ -11,19 +11,15 @@ const init = async (): Promise<any> => {
         // const result: ApiResponse = await client.indices.exists({ index: Elastic.Schemes.Snippets.index })
         const schemes = Elastic.getSchemes();
         const indices = Object.keys(Elastic.SchemesNameToIndices);
-        console.log('=================', indices)
         
-        await Promise.all(indices.map(index => {
-            // const d: RequestParams.IndicesCreate = TODO: use this one to create multiple indices.
-            client.indices.create()
-        }))
-            
-        // await client.indices.create() //TODO: change to Promise.all
-        client.indices.putMapping({ ...Elastic.SchemesOld.Snippets });
+        await Promise.all(indices.map(async index => {
+            await client.indices.create({ index })
+            await client.indices.putMapping(Elastic.SchemesNameToIndices[index])
+            // await client.indices.putMapping(Elastic.Schemes.find(scheme => scheme.index === index))
+        }));
     }
     catch(err) {
         console.log(err.meta.body.error);
-        // console.error(err.meta.body.error);
         throw err;
     }
 }

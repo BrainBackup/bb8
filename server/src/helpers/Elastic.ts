@@ -36,7 +36,7 @@ const Test: Scheme = {
 }
 const Schemes: Array<Scheme> = [Snippets, Test];
 const SchemesNameToIndices = convertArrayToObject(Schemes, 'index');
-console.log(SchemesNameToIndices)
+
 const SchemesOld = {
     Snippets: {
         index: 'snippets',
