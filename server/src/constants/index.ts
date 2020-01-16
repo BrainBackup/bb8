@@ -1,5 +1,5 @@
 interface Consts {
-    [key:string]: any; // Add index signature
+    [key:string]: any;
 }
 const consts: Consts = {
     post: {

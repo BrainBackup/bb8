@@ -4,7 +4,7 @@ import { applyMiddleware, applyRoutes } from "../../utils";
 import promiseRequest from "request-promise";
 import middleware from "../../middleware";
 import errorHandlers from "../../middleware/errorHandlers";
-import routes from "../../services/search/routes";
+import routes from "./routes";
 
 jest.mock("request-promise");
 (promiseRequest as any).mockImplementation(() => '{"features": []}');
@@ -20,23 +20,23 @@ describe("routes", () => {
   });
 
   test("a valid string query", async () => {
-    const response = await request(router).get("/api/v1/search?q=Cham");
+    const response = await request(router).get("/api/v1/snippets");
     expect(response.status).toEqual(200);
   });
 
   test("a non-existing api method", async () => {
-    const response = await request(router).get("/api/v11/search");
+    const response = await request(router).get("/api/v11/snippets");
     expect(response.status).toEqual(404);
   });
 
   test("an empty string", async () => {
-    const response = await request(router).get("/api/v1/search?q=");
+    const response = await request(router).get("/api/v1/snippets?q=");
     expect(response.status).toEqual(400);
   });
 
   test("a service is not available", async () => {
     (promiseRequest as any).mockImplementation(() => "Service Unavailable.");
-    const response = await request(router).get("/api/v1/search?q=Paris");
+    const response = await request(router).get("/api/v1/snippets?q=Paris");
     expect(response.status).toEqual(503);
   });
 });
