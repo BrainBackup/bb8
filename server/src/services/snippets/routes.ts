@@ -4,6 +4,16 @@ import { create, fetch } from './SnippetsController';
 
 export default [
   {
+    path: '/api/v1/snippets',
+    method: 'get',
+    handler: [
+        async ({ query }: Request, res: Response ) => {
+            const result = await fetch(query);
+            res.status(200).send(result);
+        }
+    ]
+  },
+  {
     path: "/api/v1/snippets",
     method: "post",
     handler: [
@@ -15,15 +25,5 @@ export default [
         res.status(200).send(body);
       }
     ]
-  },
-  {
-      path: '/api/v1/snippets',
-      method: 'get',
-      handler: [
-          async ({ query }: Request, res: Response ) => {
-              const result = await fetch(query);
-              res.status(200).send(result);
-          }
-      ]
   }
 ];

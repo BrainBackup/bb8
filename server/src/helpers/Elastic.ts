@@ -1,15 +1,11 @@
+import Utils from '../utils/utils';
 import { Client as NativeClient, ApiResponse, RequestParams } from '@elastic/elasticsearch'
 const client = new NativeClient({ node: 'http://localhost:9200' }); // TODO: break into configuration
 
-const convertArrayToObject = (array: any, key: string) => {
-    const initialValue = {};
-    return array.reduce((obj: any, item: any) => {
-        return {
-        ...obj,
-        [item[key]]: item,
-        };
-    }, initialValue);
-};
+
+const GetClient = () => {
+    return client;
+}
 interface Body {
     properties: Object
 }
@@ -35,38 +31,7 @@ const Test: Scheme = {
     body: Object.create({})
 }
 const Schemes: Array<Scheme> = [Snippets, Test];
-const SchemesNameToIndices = convertArrayToObject(Schemes, 'index');
+const SchemesNameToIndices = Utils.convertArrayToObject(Schemes, 'index');
 
-const SchemesOld = {
-    Snippets: {
-        index: 'snippets',
-        body: {
-            "properties": {
-                "selectionText": {
-                    "type": "text"
-                },
-                "pageUrl": {
-                    "type": "text"
-                }
-            }
-        }
-    },
-    Test: {
-        index: 'test',
-        body: {}
-    }
-};
-const GetClient = () => {
-    return client;
-}
-const getSchemes = (): Array<RequestParams.Index> => {
-    const indices: Array<RequestParams.Index> = Schemes.map(scheme => {
-        const doc: RequestParams.Index = {
-            ...scheme
-        }
-        return doc;
-    })
-    return indices;
-}
 
-export default { GetClient, getSchemes, Schemes, SchemesOld, SchemesNameToIndices };
+export default { GetClient, Schemes, SchemesNameToIndices };

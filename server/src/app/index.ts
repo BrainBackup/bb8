@@ -4,7 +4,6 @@ import Elastic from '../helpers/Elastic'; // TODO: add node path for lookup
 const init = async (): Promise<any> => {
     try {
         const client = Elastic.GetClient();
-        const schemes = Elastic.getSchemes();
         const indices = Object.keys(Elastic.SchemesNameToIndices);
         
         await Promise.all(indices.map(async index => {

@@ -1,6 +1,6 @@
 import { Client, ApiResponse, RequestParams } from '@elastic/elasticsearch'
 import Elastic from '../../helpers/Elastic'; // TODO: add node path for lookup
-
+const SNIPPET_INDEX = Elastic.SchemesNameToIndices['snippets'].index;
 interface Snippet {
   pageUrl: String,
   selectionText: String,
@@ -9,7 +9,7 @@ interface Snippet {
 export const fetch = async (params: any) => {
   try {
     const params1: RequestParams.Search = {
-      index: Elastic.SchemesOld.Snippets.index
+      index: SNIPPET_INDEX
     }
     const client = Elastic.GetClient();
     const result: ApiResponse = await client.search(params1);
@@ -21,9 +21,10 @@ export const fetch = async (params: any) => {
 }
 export const create = async (data: Snippet) => {
   try {
+    // TODO: need to add validation to the params as mw on the routes.
     const client = Elastic.GetClient();
     const doc: RequestParams.Index = {
-      index: Elastic.SchemesOld.Snippets.index,
+      index: SNIPPET_INDEX,
       refresh: "true",
       body: {
         selectionText: data.selectionText,
