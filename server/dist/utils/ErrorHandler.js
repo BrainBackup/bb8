@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const httpErrors_1 = require("../utils/httpErrors");
+const httpErrors_1 = require("utils/httpErrors");
 exports.notFoundError = () => {
     throw new httpErrors_1.HTTP404Error("Method not found.");
 };

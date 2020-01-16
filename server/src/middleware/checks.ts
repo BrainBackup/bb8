@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { HTTP400Error } from "../utils/httpErrors";
+import { HTTP400Error } from "utils/httpErrors";
 
 export const checkCreateSnippetsParams = (
   req: Request,

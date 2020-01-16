@@ -7,7 +7,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ErrorHandler = __importStar(require("../utils/ErrorHandler"));
+const ErrorHandler = __importStar(require("utils/ErrorHandler"));
 const handle404Error = (router) => {
     router.use((req, res) => {
         ErrorHandler.notFoundError();

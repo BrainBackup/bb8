@@ -1,4 +1,4 @@
-import Utils from '../utils/utils';
+import Utils from 'utils/utils';
 import { Client as NativeClient, ApiResponse, RequestParams } from '@elastic/elasticsearch'
 const client = new NativeClient({ node: 'http://localhost:9200' }); // TODO: break into configuration
 

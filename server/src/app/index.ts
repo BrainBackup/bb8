@@ -1,5 +1,5 @@
 import { Client, ApiResponse, RequestParams } from '@elastic/elasticsearch'
-import Elastic from '../helpers/Elastic'; // TODO: add node path for lookup
+import Elastic from 'helpers/Elastic';
 
 const init = async (): Promise<any> => {
     try {
