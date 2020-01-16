@@ -1,7 +1,7 @@
 {
-  "name": "node-rest-api-article",
-  "version": "1.0.0",
-  "description": "",
+  "name": "code-snippet-server",
+  "version": "0.0.1",
+  "description": "Server for the code snippets project",
   "main": "index.js",
   "scripts": {
     "postinstall": "npx tsc",
@@ -10,8 +10,8 @@
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Yohay Nahmany",
+  "license": "MIT",
   "jest": {
     "verbose": true,
     "transform": {
