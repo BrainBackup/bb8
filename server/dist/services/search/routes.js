@@ -21,6 +21,6 @@ exports.default = [
                 res.status(200).send(result);
             })
         ]
-    },
+    }
 ];
 //# sourceMappingURL=routes.js.map
