@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { create, fetch } from './SnippetsController';
-import Constants from 'constants';
+import Constants from '../../constants';
 import { checkCreateSnippetsParams } from "middleware/checks";
 
 export default [

@@ -1,6 +1,7 @@
 import Utils from 'utils/utils';
+import env from 'config/env';
 import { Client as NativeClient, ApiResponse, RequestParams } from '@elastic/elasticsearch'
-const client = new NativeClient({ node: 'http://localhost:9200' }); // TODO: break into configuration
+const client = new NativeClient({ node: `http://${env.elastic.host}:${env.elastic.port}` });
 
 
 const GetClient = () => {

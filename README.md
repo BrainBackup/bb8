@@ -12,3 +12,5 @@ Contribution is more than welcome.
 [ ] run elasticsearch: `./run_elastic.sh` 
 
 [ ] TODO: add one docker-compose to rule them  all.
+
+* process.env.NODE_ENV  - development, test and production - should be passed as env variable

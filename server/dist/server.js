@@ -19,6 +19,7 @@ const middleware_1 = __importDefault(require("middleware"));
 const errorHandlers_1 = __importDefault(require("middleware/errorHandlers"));
 const services_1 = __importDefault(require("services"));
 const app_1 = __importDefault(require("app"));
+const env_1 = __importDefault(require("config/env"));
 process.on("uncaughtException", e => {
     console.log(e);
     process.exit(1);
@@ -31,10 +32,9 @@ const router = express_1.default();
 utils_1.applyMiddleware(middleware_1.default, router);
 utils_1.applyRoutes(services_1.default, router);
 utils_1.applyMiddleware(errorHandlers_1.default, router);
-const { PORT = 3009 } = process.env;
 const server = http_1.default.createServer(router);
-server.listen(PORT, () => __awaiter(this, void 0, void 0, function* () {
+server.listen(env_1.default.port, () => __awaiter(this, void 0, void 0, function* () {
     yield app_1.default.init();
-    console.log(`Server is running http://localhost:${PORT}...`);
+    console.log(`Server is running http://localhost:${env_1.default.port}...`);
 }));
 //# sourceMappingURL=server.js.map
