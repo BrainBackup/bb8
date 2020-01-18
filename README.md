@@ -14,3 +14,5 @@ Contribution is more than welcome.
 [ ] TODO: add one docker-compose to rule them  all.
 
 * process.env.NODE_ENV  - development, test and production - should be passed as env variable
+
+* working on Dockerizing this week
