@@ -15,7 +15,7 @@ const init = async (): Promise<any> => {
         }));
     }
     catch(err) {
-        console.log(err.meta.body.error);
+        console.log(err);
         throw err;
     }
 }
