@@ -1,7 +1,7 @@
 export default {
     env: 'development',
     elastic: {
-        host: 'localhost',
+        host: 'elasticsearch',
         port: 9200
     },
     port: 3009

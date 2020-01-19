@@ -5,7 +5,7 @@ const init = async (): Promise<any> => {
     try {
         const client = Elastic.GetClient();
         const indices = Object.keys(Elastic.SchemesNameToIndices);
-        
+
         await Promise.all(indices.map(async index => {
             const { body: isIndexExist } = await client.indices.exists({ index });
             if (!isIndexExist) {
