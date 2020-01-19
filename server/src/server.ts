@@ -26,6 +26,6 @@ applyMiddleware(errorHandlers, router);
 const server = http.createServer(router);
 
 server.listen(env.port, async () => {
-  // await app.init();
+  await app.init();
   console.log(`Server is running http://localhost:${env.port}...`)
 });
