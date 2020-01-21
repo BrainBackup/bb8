@@ -9,7 +9,8 @@ import { App } from 'app';
 // default fixtures for TodoStore
 const defaultTodos = [
   new TodoModel('Use Mobx'),
-  new TodoModel('Use React', true)
+  new TodoModel('Use React'),
+  new TodoModel('Make ui works', true)
 ];
 
 // prepare MobX stores
