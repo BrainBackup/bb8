@@ -14,6 +14,10 @@ This project is one of many small projects that are aiming to create backup to o
 ### Server GW:
 
 `./run_elastic.sh`
+
 `cd server`
+
 `npm start`
+
 * process.env.NODE_ENV  - development, test and production - should be passed as env variable
+
