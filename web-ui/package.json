@@ -9,7 +9,7 @@
     "start": "webpack-dev-server --mode development --hot --progress --colors --port 3003 --open",
     "build": "webpack -p --progress --colors",
     "prettier": "prettier --write \"src/**/*.{ts,tsx,css}\"",
-    "install_and_run": "npm install; npm run start"
+    "install_and_run": "npm run start"
   },
   "license": "MIT",
   "devDependencies": {
@@ -53,7 +53,6 @@
     "mobx-react-router": "^4.0.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-router": "^4.3.1",
-    "semantic-ui": "^2.4.2"
+    "react-router": "^4.3.1"
   }
 }
