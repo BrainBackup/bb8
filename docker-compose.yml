@@ -16,6 +16,15 @@ services:
     ports:
       - 3009:3009
     command: npm run install_and_run
+  web_ui:
+    build: ./web-ui
+    volumes:
+      - type: bind
+        source: ./web-ui/
+        target: /usr/app
+    ports:
+      - 3003:3003
+    command: npm run install_and_run
   auth_service:
     build: ./auth-service
     volumes:
@@ -29,10 +38,6 @@ services:
     ports:
       - 3010:3010
     command: npm run install_and_run
-    # entrypoint:
-    #   - npm
-    #   - run
-    #   - install_and_run 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
     environment:
