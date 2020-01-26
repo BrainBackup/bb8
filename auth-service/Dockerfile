@@ -5,4 +5,4 @@ WORKDIR /app
 RUN npm install
 
 CMD ["npm", "start"]
-EXPOSE 3009
+EXPOSE 3010

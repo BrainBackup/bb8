@@ -7,10 +7,22 @@ services:
     build:
       context: ./server
       dockerfile: ./Dockerfile
+    depends_on:
+      - elasticsearch
     links: 
       - elasticsearch
     ports:
       - 3009:3009
+  auth_service:
+    build:
+      context: ./auth_service
+      dockerfile: ./Dockerfile
+    depends_on:
+      - elasticsearch
+    links: 
+      - elasticsearch
+    ports:
+      - 3010:3010
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
     environment:
