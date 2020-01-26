@@ -7,6 +7,10 @@ services:
     build:
       context: ./server
       dockerfile: ./Dockerfile
+    volumes:
+      - type: bind
+        source: ./server/
+        target: /usr/app
     depends_on:
       - elasticsearch
     links: 
@@ -14,15 +18,24 @@ services:
     ports:
       - 3009:3009
   auth_service:
+    image: node:13.6
     build:
       context: ./auth-service
-      dockerfile: ./Dockerfile
+    volumes:
+      - type: bind
+        source: ./auth-service/
+        target: /usr/app
     depends_on:
       - elasticsearch
     links: 
       - elasticsearch
     ports:
       - 3010:3010
+    command: npm run install_and_run
+    # entrypoint:
+    #   - npm
+    #   - run
+    #   - install_and_run 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
     environment:

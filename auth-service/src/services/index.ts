@@ -1,3 +1,3 @@
-import snippetsRoutes from './snippets/routes';
 
-export default [...snippetsRoutes];
+console.log('asd asd');
+export default [];
