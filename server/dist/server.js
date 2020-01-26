@@ -34,7 +34,7 @@ utils_1.applyRoutes(services_1.default, router);
 utils_1.applyMiddleware(errorHandlers_1.default, router);
 const server = http_1.default.createServer(router);
 server.listen(env_1.default.port, () => __awaiter(this, void 0, void 0, function* () {
-    yield app_1.default.init();
+    setTimeout(() => __awaiter(this, void 0, void 0, function* () { return yield app_1.default.init(); }), 30 * 1000);
     console.log(`Server is running http://localhost:${env_1.default.port}...`);
 }));
 //# sourceMappingURL=server.js.map

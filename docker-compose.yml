@@ -4,9 +4,7 @@ version: '3.6'
 
 services:
   server:
-    build:
-      context: ./server
-      dockerfile: ./Dockerfile
+    build: ./server
     volumes:
       - type: bind
         source: ./server/
@@ -17,10 +15,9 @@ services:
       - elasticsearch
     ports:
       - 3009:3009
+    command: npm run install_and_run
   auth_service:
-    image: node:13.6
-    build:
-      context: ./auth-service
+    build: ./auth-service
     volumes:
       - type: bind
         source: ./auth-service/
