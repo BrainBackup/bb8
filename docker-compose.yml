@@ -45,37 +45,8 @@ services:
     ports:
       - 9300:9300
       - 9200:9200
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.5.2
+    volumes:
+      - ./kibana.yml:/usr/share/kibana/config/kibana.yml
 
-# version: '3.6'
-# services:
-#   server:
-#     build: 
-#     context: ./server
-#       dockerfile: ./server/Dockerfile
-#       command: npm run start
-#       links:
-#           - elasticsearch
-#       depends_on:
-#           - elasticsearch
-#       networks: 
-#         - esnet
-#   elasticsearch:
-#     container_name: tqd-elasticsearch
-#     image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
-#     volumes:
-#       - esdata:/usr/share/elasticsearch/data
-#     environment:
-#       - bootstrap.memory_lock=true
-#       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-#       - discovery.type=single-node
-#     logging:
-#       driver: none
-    # ports:
-    #   - 9300:9300
-    #   - 9200:9200
-#     networks: 
-#       - esnet
-# volumes:
-#   esdata:
-# networks:
-#   esnet:
