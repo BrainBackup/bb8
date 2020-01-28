@@ -17,7 +17,9 @@ services:
       - 3009:3009
     command: npm run install_and_run
   web_ui:
-    build: ./web-ui
+    build:
+      context: ./web-ui
+      dockerfile: Dockerfile
     volumes:
       - type: bind
         source: ./web-ui/
