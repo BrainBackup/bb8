@@ -1,4 +1,4 @@
-<img alt="CodeSnippet" src="logo.png" width="356px">
+<img alt="CodeSnippet" src="logo.png" width="356px" style="left=50%">
 
 Code snippet: modular, powerful and extendable project for memory improvment.
 
