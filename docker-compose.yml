@@ -17,16 +17,14 @@ services:
       - 3009:3009
     command: npm run install_and_run
   web_ui:
-    build:
-      context: ./web-ui
-      dockerfile: Dockerfile
+    build: ./web-ui
     volumes:
       - type: bind
         source: ./web-ui/
         target: /usr/app
     ports:
       - 3003:3003
-    command: npm run install_and_run
+    command: npm run start
   auth_service:
     build: ./auth-service
     volumes:
