@@ -1,10 +1,10 @@
-# code-snippet
+<img alt="CodeSnippet" src="logo.png" width="356px">
 
-Code snippet project
+Code snippet: modular, powerful and extendable project for memory improvment.
 
-This project is one of many small projects that are aiming to create backup to our brain.
-
+* * *
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 ## Simple development process
 
