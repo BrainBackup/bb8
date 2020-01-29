@@ -5,6 +5,8 @@
 * * *
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Overview
+
 
 ## Simple development process
 
@@ -21,5 +23,3 @@
 * Side loading the chrome extension: go to chrome://extensions, click on Load unpacked, select the chrome-extension directoy
 * Open issue: the header should include `chrome-extension::` and follow up the subject of the issue.
 * TODO: Automatic way to update the app.
-
-
