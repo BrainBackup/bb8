@@ -37,6 +37,7 @@ export class TodoList extends React.Component<TodoListProps, TodoListState> {
 
   render() {
     const { todos, ...actions } = this.props;
+    console.log('asd')
     return (
       <section className={style.main}>
         {this.renderToggleAll()}
