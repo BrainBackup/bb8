@@ -8,7 +8,6 @@ interface Snippet {
 }
 export const fetch = async (params: any) => {
   try {
-    console.log('here');
     const params1: RequestParams.Search = {
       index: SNIPPET_INDEX
     }
@@ -23,7 +22,6 @@ export const fetch = async (params: any) => {
 export const create = async (data: Snippet) => {
   try {
     // TODO: need to add validation to the params as mw on the routes.
-    console.log('TODO remove this asdas dasdasd as sd ');
     const client = Elastic.GetClient();
     const doc: RequestParams.Index = {
       index: SNIPPET_INDEX,
