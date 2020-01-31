@@ -12,6 +12,7 @@ import {
   TODO_FILTER_LOCATION_HASH,
   TodoFilter
 } from 'app/constants';
+import Button from '@material-ui/core/Button';
 
 export interface TodoAppProps extends RouteComponentProps<any> {
   /** MobX Stores will be injected via @inject() **/
@@ -89,6 +90,10 @@ export class TodoApp extends React.Component<TodoAppProps, TodoAppState> {
     return (
       <div className={style.normal}>
         <Header addTodo={todoStore.addTodo} />
+        <Button variant="contained" color="primary">
+          Hello World
+        </Button>
+        
         <TodoList
           todos={filteredTodos}
           completeAll={todoStore.completeAll}
