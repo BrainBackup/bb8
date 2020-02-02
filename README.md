@@ -25,3 +25,6 @@
 * Side loading the chrome extension: go to chrome://extensions, click on Load unpacked, select the chrome-extension directoy
 * Open issue: the header should include `chrome-extension::` and follow up the subject of the issue.
 * TODO: Automatic way to update the app.
+
+### Test NLP service
+* MLQA reserch from Facebook® should be a good start. 
