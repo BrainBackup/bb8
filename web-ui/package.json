@@ -8,11 +8,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --host 0.0.0.0 --hot --progress --colors --port 3003 --open",
     "build": "webpack -p --progress --colors",
-    "prettier": "prettier --write \"src/**/*.{ts,tsx,css}\""
+    "prettier": "prettier --write \"src/**/*.{ts,tsx,css}\"",
+    "storybook": "start-storybook -p 9001"
   },
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@storybook/react": "^5.3.12",
     "@types/classnames": "^2.2.7",
     "@types/node": "^10.12.18",
     "@types/react": "^16.7.20",
@@ -35,6 +37,7 @@
     "postcss-url": "^8.0.0",
     "prettier": "^1.16.0",
     "react-hot-loader": "^4.6.3",
+    "storybook": "^5.3.12",
     "style-loader": "^0.23.1",
     "ts-loader": "^5.3.3",
     "typescript": "^3.2.4",
