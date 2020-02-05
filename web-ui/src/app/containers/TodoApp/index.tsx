@@ -13,6 +13,7 @@ import {
   TodoFilter
 } from 'app/constants';
 import Button from '@material-ui/core/Button';
+import Navigation from 'app/components/Navigation';
 
 export interface TodoAppProps extends RouteComponentProps<any> {
   /** MobX Stores will be injected via @inject() **/
@@ -89,6 +90,7 @@ export class TodoApp extends React.Component<TodoAppProps, TodoAppState> {
 
     return (
       <div className={style.normal}>
+        <Navigation/>
         <Header addTodo={todoStore.addTodo} />
         <Button variant="contained" color="primary">
           Hello World
