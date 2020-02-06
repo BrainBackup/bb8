@@ -90,18 +90,20 @@ export class TodoApp extends React.Component<TodoAppProps, TodoAppState> {
 
     return (
       <div className={style.normal}>
-        <Navigation/>
-        <Header addTodo={todoStore.addTodo} />
-        <Button variant="contained" color="primary">
+        <Navigation>
+          <Header addTodo={todoStore.addTodo} />
+          <TodoList
+            todos={filteredTodos}
+            completeAll={todoStore.completeAll}
+            deleteTodo={todoStore.deleteTodo}
+            editTodo={todoStore.editTodo}
+          />
+          {/* {children} */}
+        </Navigation>
+        {/* <Button variant="contained" color="primary">
           Hello World
-        </Button>
+        </Button> */}
         
-        <TodoList
-          todos={filteredTodos}
-          completeAll={todoStore.completeAll}
-          deleteTodo={todoStore.deleteTodo}
-          editTodo={todoStore.editTodo}
-        />
         {footer}
         {children}
       </div>
