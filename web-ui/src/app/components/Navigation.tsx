@@ -82,8 +82,15 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   }),
 );
-
-export default function MiniDrawer({ children }) {
+interface IExample {
+    name: String
+}
+interface NavigationInterface {
+    children: React.ReactNode | React.ReactChild | React.ReactFragment | React.ReactPortal | boolean | null | undefined;
+}
+// const example: React.FunctionComponent<IExample> = ({name}) => (<div data-test={name}>{name}</div>);
+// export default function MiniDrawer({ children }) {
+const MiniDrawer: React.FunctionComponent<NavigationInterface> = ({ children }) => {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -166,3 +173,4 @@ export default function MiniDrawer({ children }) {
     </div>
   );
 }
+export default MiniDrawer;
