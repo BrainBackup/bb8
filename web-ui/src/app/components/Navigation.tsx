@@ -15,8 +15,10 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import SettingsIcon from '@material-ui/icons/Settings';
+import CodeIcon from '@material-ui/icons/Code';
+import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
+import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 
 const drawerWidth = 240;
 
@@ -144,21 +146,32 @@ const MiniDrawer: React.FunctionComponent<NavigationInterface> = ({ children }) 
         </div>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            <ListItem button key='main'>
+              <ListItemIcon><CodeIcon /></ListItemIcon>
+              <ListItemText primary='Main' />
+            </ListItem>
+            <ListItem button key='feed'>
+              <ListItemIcon><DynamicFeedIcon /></ListItemIcon>
+              <ListItemText primary='Feed' />
+            </ListItem>
+            
+          {/* {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
-          ))}
+          ))} */}
         </List>
         <Divider />
         <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+            <ListItem button key='settings'>
+              <ListItemIcon><SettingsIcon /></ListItemIcon>
+              <ListItemText primary='Settings' />
             </ListItem>
-          ))}
+            <ListItem button key='user' >
+              <ListItemIcon><PersonOutlineIcon /></ListItemIcon>
+              <ListItemText primary='User' />
+            </ListItem>
         </List>
       </Drawer>
       <main className={classes.content}>
