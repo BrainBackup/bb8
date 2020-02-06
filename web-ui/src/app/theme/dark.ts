@@ -11,11 +11,22 @@ const theme = createMuiTheme({
           contrastText: '#ffcc00',
         },
         contrastThreshold: 3,
-        tonalOffset: 0.2,
-      },
-    // spacing: 4,
+        tonalOffset: 0.2
+    },
     typography: {
        
+    },
+    overrides: {
+      // MuiListItemIcon: {
+      //   root: {
+      //     color: 'white'
+      //   }
+      // },
+      // MuiDivider: {
+      //   root: {
+      //     backgroundColor: 'white'
+      //   }
+      // }
     }
 });
 export default theme;

@@ -14,7 +14,7 @@ import {
   TodoFilter
 } from 'app/constants';
 import Navigation from 'app/components/Navigation';
-import theme from 'app/theme';
+import theme from 'app/theme/dark';
 
 export interface TodoAppProps extends RouteComponentProps<any> {
   /** MobX Stores will be injected via @inject() **/

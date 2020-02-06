@@ -54,6 +54,7 @@ const useStyles = makeStyles((theme: Theme) =>
       whiteSpace: 'nowrap',
     },
     drawerOpen: {
+    //   backgroundColor: '#080f21',
       width: drawerWidth,
       transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
@@ -147,7 +148,7 @@ const MiniDrawer: React.FunctionComponent<NavigationInterface> = ({ children }) 
         <Divider />
         <List>
             <ListItem button key='main'>
-              <ListItemIcon><CodeIcon /></ListItemIcon>
+              <ListItemIcon ><CodeIcon /></ListItemIcon>
               <ListItemText primary='Main' />
             </ListItem>
             <ListItem button key='feed'>
