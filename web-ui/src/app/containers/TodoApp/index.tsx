@@ -12,7 +12,6 @@ import {
   TODO_FILTER_LOCATION_HASH,
   TodoFilter
 } from 'app/constants';
-import Button from '@material-ui/core/Button';
 import Navigation from 'app/components/Navigation';
 
 export interface TodoAppProps extends RouteComponentProps<any> {

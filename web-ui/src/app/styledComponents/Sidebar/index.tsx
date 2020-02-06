@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-function Component({}) {
+function Sidebar({}) {
     return (
         <div>
             Test asd
         </div>
     )
 }
-export default Component;
+export default Sidebar;

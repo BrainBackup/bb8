@@ -120,7 +120,7 @@ const MiniDrawer: React.FunctionComponent<NavigationInterface> = ({ children }) 
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Mini variant drawer
+            Code Snippet Application
           </Typography>
         </Toolbar>
       </AppBar>
