@@ -19,6 +19,7 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import CodeIcon from '@material-ui/icons/Code';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
+import history from '../history';
 
 const drawerWidth = 240;
 
@@ -147,7 +148,7 @@ const MiniDrawer: React.FunctionComponent<NavigationInterface> = ({ children }) 
         </div>
         <Divider />
         <List>
-            <ListItem button key='main'>
+            <ListItem button key='main' onClick={() => history.push('/')}>
               <ListItemIcon ><CodeIcon /></ListItemIcon>
               <ListItemText primary='Main' />
             </ListItem>
@@ -155,13 +156,6 @@ const MiniDrawer: React.FunctionComponent<NavigationInterface> = ({ children }) 
               <ListItemIcon><DynamicFeedIcon /></ListItemIcon>
               <ListItemText primary='Feed' />
             </ListItem>
-            
-          {/* {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))} */}
         </List>
         <Divider />
         <List>
@@ -169,7 +163,7 @@ const MiniDrawer: React.FunctionComponent<NavigationInterface> = ({ children }) 
               <ListItemIcon><SettingsIcon /></ListItemIcon>
               <ListItemText primary='Settings' />
             </ListItem>
-            <ListItem button key='user' >
+            <ListItem button key='user' onClick={() => history.push('/login')}>
               <ListItemIcon><PersonOutlineIcon /></ListItemIcon>
               <ListItemText primary='User' />
             </ListItem>

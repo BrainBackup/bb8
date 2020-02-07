@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'mobx-react';
-import { createBrowserHistory } from 'history';
 import { TodoModel } from 'app/models';
 import { createStores } from 'app/stores';
 import { App } from 'app';
+import history from './app/history';
 
 // default fixtures for TodoStore
 const defaultTodos = [
@@ -14,7 +14,6 @@ const defaultTodos = [
 ];
 
 // prepare MobX stores
-const history = createBrowserHistory();
 const rootStore = createStores(history, defaultTodos);
 
 // render react DOM

@@ -6,15 +6,12 @@ import { Header } from 'app/components/Header';
 import { TodoList } from 'app/components/TodoList';
 import { Footer } from 'app/components/Footer';
 import { TodoStore, RouterStore } from 'app/stores';
-// import { MuiThemeProvider } from '@material-ui/core';
 import {
   STORE_TODO,
   STORE_ROUTER,
   TODO_FILTER_LOCATION_HASH,
   TodoFilter
 } from 'app/constants';
-import Navigation from 'app/components/Navigation';
-// import theme from 'app/theme/dark';
 
 export interface TodoAppProps extends RouteComponentProps<any> {
   /** MobX Stores will be injected via @inject() **/
@@ -88,23 +85,15 @@ export class TodoApp extends React.Component<TodoAppProps, TodoAppState> {
         onChangeFilter={this.handleFilter}
       />
     );
-    // TODO: remove theme and navaigation
     return (
       <div className={style.normal}>
-        <Navigation>
-          <Header addTodo={todoStore.addTodo} />
-          <TodoList
-            todos={filteredTodos}
-            completeAll={todoStore.completeAll}
-            deleteTodo={todoStore.deleteTodo}
-            editTodo={todoStore.editTodo}
-          />
-          {/* {children} */}
-        </Navigation>
-        {/* <Button variant="contained" color="primary">
-          Hello World
-        </Button> */}
-        
+        <Header addTodo={todoStore.addTodo} />
+        <TodoList
+          todos={filteredTodos}
+          completeAll={todoStore.completeAll}
+          deleteTodo={todoStore.deleteTodo}
+          editTodo={todoStore.editTodo}
+        />
         {footer}
         {children}
       </div>
