@@ -2,19 +2,19 @@ import * as React from 'react';
 import { Route, Redirect } from 'react-router';
 // TODO: ask about handeling ...props
 interface IPrivateRoute {
-    component: React.ReactElement<any> | function,
+    // component: React.ReactElement<any>,
+    component: any,
     authed: boolean,
     address: string,
-    exact: boolean,
-    key: string
+    [x:string]: any;
 }
-const PrivateRoute: React.FunctionComponent<IPrivateRoute> = ({ component, authed, address, ...props }) => {
+const PrivateRoute: React.FunctionComponent<IPrivateRoute> = ({ component: Component, authed, address, ...props }) => {
     return (
       <Route
         {...props}
         render={(props) => authed === true
-          ? React.cloneElement(component, {...props})
-          : <Redirect to={{ pathname: `/${address}`, state: { from: props.location } }}/>}
+          ? <Component {...props} />
+          : <Redirect to={{ pathname: '/login', state: { from: props.location } }}/>}
       />
     );
   }
