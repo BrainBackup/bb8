@@ -17,6 +17,7 @@ import CardContent from '@material-ui/core/CardContent';
 // import { Divider } from '@material-ui/core';
 import { Grid, Divider } from '@material-ui/core';
 import CustomInput from 'app/components/CustomInput';
+import Password from 'app/components/Password';
 import TwitterButton from './components/TwitterButton';
 import GithubButton from './components/GithubButton';
 import FacebookButton from './components/FacebookButton';
@@ -58,6 +59,7 @@ export default function OutlinedCard() {
           </Grid>
           <Grid item xs={5}>
             <CustomInput label='Username' onChange={(e) => console.log(e.target.value)} />
+            <Password onChange={(e) => console.log(e.target.value)}/>
           </Grid>
         </Grid>
       </CardContent>
