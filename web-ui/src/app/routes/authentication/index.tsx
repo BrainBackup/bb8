@@ -17,6 +17,7 @@ import CardContent from '@material-ui/core/CardContent';
 // import { Divider } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 import CustomInput from 'app/components/CustomInput';
+import TwitterButton from './components/TwitterButton';
 
 const useStyles = makeStyles({
   root: {
@@ -46,6 +47,7 @@ export default function OutlinedCard() {
       <CardContent>
         <Grid container>
           <Grid item xs={6}>
+            <TwitterButton onClick={() => console.log('on click')}/>
           </Grid>
           <Grid item xs={6}>
             <CustomInput label='Username' onChange={(e) => console.log(e.target.value)} />
