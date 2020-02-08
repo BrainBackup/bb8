@@ -1,14 +1,14 @@
 import * as React from 'react';
 
-import { FormControl, InputLabel, Input } from ''
+import { FormControl, InputLabel, Input } from '@material-ui/core';
 interface IUsername {
-    onChange: object
+    onChange: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>
 }
 const Username: React.FunctionComponent<IUsername> = ({ onChange, ...props }) => {
     return (
         <FormControl margin="normal" required fullWidth>
-            <InputLabel htmlFor="username" style={inputStyle}>Username</InputLabel>
-            <Input id='username' name="username" style={inputStyle} autoComplete="username" onChange={this.handleChange('username')} autoFocus />
+            <InputLabel htmlFor="username" >Username</InputLabel>
+            <Input id='username' name="username" autoComplete="username" onChange={onChange} autoFocus />
         </FormControl>
     )
 }

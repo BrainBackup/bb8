@@ -13,6 +13,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Username from './components/Username';
 
 const useStyles = makeStyles({
   root: {
@@ -38,6 +39,7 @@ export default function OutlinedCard() {
   return (
     <Card className={classes.root} variant="outlined">
       <CardContent>
+        <Username onChange={(e) => console.log(e.target.value)} />
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           Word of the Day
         </Typography>
