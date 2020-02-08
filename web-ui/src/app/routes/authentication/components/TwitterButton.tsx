@@ -9,8 +9,9 @@ const TwitterButton: React.FunctionComponent<IButton> = ({ onClick, ...props }) 
     return (
         <Button
             variant="contained"
-            style={{ backgroundColor: '#00acee', color: 'white' }}
+            style={{ backgroundColor: '#00acee', color: 'white', textTransform: 'none', margin: '5%' }}
             startIcon={<FaTwitter />}
+            fullWidth
         >
             Login With Twitter
         </Button>
