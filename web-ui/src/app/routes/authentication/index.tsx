@@ -1,21 +1,6 @@
-// import React from 'React';
-
-// function Template(props: Int)
-// import * as React from 'react';
-
-// const Login: React.FunctionComponent<IPrivateRoute> = ({ component, authed, address, ...props }) => {
-// const Login = () => null;
-// export default Login;
 import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-// import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-// import Button from '@material-ui/core/Button';
-// import Typography from '@material-ui/core/Typography';
-// import Username from './components/Username';
-// import { Divider } from '@material-ui/core';
-import { Grid, Divider } from '@material-ui/core';
+import { Grid, Divider, Card, CardContent } from '@material-ui/core';
 import CustomInput from 'app/components/CustomInput';
 import Password from 'app/components/Password';
 import TwitterButton from './components/TwitterButton';
@@ -41,8 +26,11 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
 });
+interface IAuth {
 
-export default function OutlinedCard() {
+}
+const Authentication: React.FunctionComponent<IAuth> = ({ }) => {
+// export default function Authentication() {
   const classes = useStyles();
   // const bull = <span className={classes.bullet}>•</span>;
   return (
@@ -63,9 +51,7 @@ export default function OutlinedCard() {
           </Grid>
         </Grid>
       </CardContent>
-      {/* <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions> */}
     </Card>
   );
 }
+export default Authentication;
