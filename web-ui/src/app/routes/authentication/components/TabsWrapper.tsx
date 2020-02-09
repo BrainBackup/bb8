@@ -25,16 +25,19 @@ const useStyles = makeStyles({
       }
     }
   });
-  interface ITabs {
-    
-  }
-  const TabsWrapper: React.FunctionComponent<ITabs> = ({ }) => {
-    const [selected, setSelected] = React.useState(0);
+  // TODO: enable this and fix the Dispatch error
+  // interface ITabs {
+  //   onChange: Dispatch<React.SetStateAction<number>>,
+  //   activeTab: number
+  // }
+  // const TabsWrapper: React.FunctionComponent<ITabs> = ({ }) => {
+    // https://github.com/reduxjs/redux-thunk/issues/242
+  const TabsWrapper = ({ onChange, activeTab }) => {
       const classes = useStyles();
       return (
           <Tabs
-            value={selected}
-            onChange={(e, value) => setSelected(value)}
+            value={activeTab}
+            onChange={(e, value) => onChange(value)}
             classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
           >
             <Tab

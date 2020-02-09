@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Divider, Card, CardContent } from '@material-ui/core';
-import CustomInput from 'app/components/CustomInput';
-import Password from 'app/components/Password';
 import TwitterButton from './components/TwitterButton';
 import GithubButton from './components/GithubButton';
 import FacebookButton from './components/FacebookButton';
 import TabsWrapper from './components/TabsWrapper';
+import { TABS } from './constants';
+import Login from './components/Login';
 
 const useStyles = makeStyles({
   root: {
@@ -31,9 +31,13 @@ interface IAuth {
 
 }
 const Authentication: React.FunctionComponent<IAuth> = ({ }) => {
+  const [activeTab, setActiveTab] = React.useState(TABS.LOGIN);
 // export default function Authentication() {
   const classes = useStyles();
-  // const bull = <span className={classes.bullet}>•</span>;
+  const viewActiveTab = {
+    [TABS.LOGIN]: <Login />,
+    [TABS.REGISTER]: null
+  };
   return (
     <Card className={classes.root} variant="outlined">
       <CardContent>
@@ -47,9 +51,8 @@ const Authentication: React.FunctionComponent<IAuth> = ({ }) => {
             <Divider orientation='vertical' style={{ marginLeft: '50%' }}/>
           </Grid>
           <Grid item xs={5}>
-            <TabsWrapper />
-            <CustomInput label='Username' onChange={(e) => console.log(e.target.value)} />
-            <Password onChange={(e) => console.log(e.target.value)}/>
+            <TabsWrapper activeTab={activeTab} onChange={setActiveTab}/>
+            { viewActiveTab[activeTab] }
           </Grid>
         </Grid>
       </CardContent>
