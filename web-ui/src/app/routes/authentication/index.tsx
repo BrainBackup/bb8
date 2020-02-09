@@ -6,11 +6,12 @@ import Password from 'app/components/Password';
 import TwitterButton from './components/TwitterButton';
 import GithubButton from './components/GithubButton';
 import FacebookButton from './components/FacebookButton';
+import TabsWrapper from './components/TabsWrapper';
 
 const useStyles = makeStyles({
   root: {
     position: 'fixed',
-    left: '30%',
+    left: '20%',
     top: '30%',
     minWidth: 600,
   },
@@ -46,6 +47,7 @@ const Authentication: React.FunctionComponent<IAuth> = ({ }) => {
             <Divider orientation='vertical' style={{ marginLeft: '50%' }}/>
           </Grid>
           <Grid item xs={5}>
+            <TabsWrapper />
             <CustomInput label='Username' onChange={(e) => console.log(e.target.value)} />
             <Password onChange={(e) => console.log(e.target.value)}/>
           </Grid>
