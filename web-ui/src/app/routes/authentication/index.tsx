@@ -7,6 +7,7 @@ import FacebookButton from './components/FacebookButton';
 import TabsWrapper from './components/TabsWrapper';
 import { TABS } from './constants';
 import Login from './components/Login';
+import Register from './components/Register';
 
 const useStyles = makeStyles({
   root: {
@@ -36,7 +37,7 @@ const Authentication: React.FunctionComponent<IAuth> = ({ }) => {
   const classes = useStyles();
   const viewActiveTab = {
     [TABS.LOGIN]: <Login />,
-    [TABS.REGISTER]: null
+    [TABS.REGISTER]: <Register />
   };
   return (
     <Card className={classes.root} variant="outlined">
