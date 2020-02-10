@@ -22,7 +22,7 @@ const Login: React.FunctionComponent<ILogin> = ({ }) => {
             <Password onChange={(e) => setForm({ ...form, password: e.target.value })}/>
             <Button
                 variant="contained"
-                style={{ backgroundColor: '#182952', color: 'white', textTransform: 'none' }}
+                style={{ backgroundColor: '#182952', color: 'white', textTransform: 'none', marginTop: '5%' }}
                 fullWidth>
                 Login
             </Button>

@@ -44,9 +44,12 @@ const Authentication: React.FunctionComponent<IAuth> = ({ }) => {
       <CardContent>
         <Grid container>
           <Grid item xs={5}>
-            <TwitterButton onClick={() => console.log('on click')}/>
-            <GithubButton onClick={() => console.log('on click')}/>
-            <FacebookButton onClick={() => console.log('on click')}/>
+            <div style={{ marginTop: 30 }}>
+              <TwitterButton onClick={() => console.log('on click')}/>
+              <GithubButton onClick={() => console.log('on click')}/>
+              <FacebookButton onClick={() => console.log('on click')}/>
+
+            </div>
           </Grid>
           <Grid item xs={2}>
             <Divider orientation='vertical' style={{ marginLeft: '50%' }}/>
