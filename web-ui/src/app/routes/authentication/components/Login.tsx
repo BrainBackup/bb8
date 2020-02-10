@@ -7,22 +7,22 @@ interface ILogin {
 
 }
 interface IForm {
-    username: string,
+    mailAddress: string,
     password: string
 };
 const Login: React.FunctionComponent<ILogin> = ({ }) => {
     const initialState: IForm = {
-        username: '',
+        mailAddress: '',
         password: ''
     };
     const [form, setForm] = React.useState(initialState);
     return (
         <div>
-            <CustomInput fullWidth={true} label='Username' onChange={(e) => setForm({ ...form, username: e.target.value })} />
+            <CustomInput fullWidth={true} label='Mail Address' onChange={(e) => setForm({ ...form, mailAddress: e.target.value })} />
             <Password onChange={(e) => setForm({ ...form, password: e.target.value })}/>
             <Button
                 variant="contained"
-                style={{ backgroundColor: '#182952', color: 'white', textTransform: 'none', margin: '5%' }}
+                style={{ backgroundColor: '#182952', color: 'white', textTransform: 'none' }}
                 fullWidth>
                 Login
             </Button>

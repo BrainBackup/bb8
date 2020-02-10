@@ -11,7 +11,6 @@ const useStyles = makeStyles({
     tabRoot: {
       'color': '#9191a9',
       'textTransform': 'initial',
-      'minWidth': 72,
       'fontSize': '18px',
       '&:hover': {
         color: '#3e90ff',

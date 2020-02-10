@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button } from '@material-ui/core';
-import CustomInput from 'app/components/CustomInput';
 import Password from 'app/components/Password';
+import CustomInput from 'app/components/CustomInput';
 
 interface IRegister {
 
@@ -31,7 +31,7 @@ const IRegister: React.FunctionComponent<IRegister> = ({ }) => {
             <Password onChange={(e) => setForm({ ...form, password: e.target.value })}/>
             <Button
                 variant="contained"
-                style={{ backgroundColor: '#182952', color: 'white', textTransform: 'none', margin: '5%' }}
+                style={{ backgroundColor: '#182952', color: 'white', textTransform: 'none' }}
                 fullWidth
                 onClick={(e) => console.log(form)}>
                 Register

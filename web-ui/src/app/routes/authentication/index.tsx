@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     position: 'fixed',
     left: '20%',
     top: '30%',
-    minWidth: 600,
+    maxWidth: 900,
   },
   bullet: {
     display: 'inline-block',
