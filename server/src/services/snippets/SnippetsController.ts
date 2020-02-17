@@ -1,6 +1,7 @@
-import { Client, ApiResponse, RequestParams } from '@elastic/elasticsearch'
 import Elastic from '../../helpers/Elastic'; // TODO: add node path for lookup
+import { Client, ApiResponse, RequestParams } from '@elastic/elasticsearch'
 const SNIPPET_INDEX = Elastic.SchemesNameToIndices['snippets'].index;
+var consul = require('consul')();
 interface Snippet {
   pageUrl: String,
   selectionText: String,
@@ -13,6 +14,10 @@ export const fetch = async (params: any) => {
     }
     const client = Elastic.GetClient();
     const result: ApiResponse = await client.search(params1);
+    consul.acl.bootstrap(function(err: any, result: any) {
+      if (err) throw err;
+      console.log(result);
+    });
     return result.body.hits.hits;
   }
   catch (err) {
