@@ -1,0 +1,27 @@
+{
+  "name": "@ynahmany/create-project",
+  "version": "1.0.0",
+  "description": "A CLI to bootstrap my new projects",
+  "main": "src/index.js",
+  "bin": {
+    "@ynahmany/create-project": "bin/create-project",
+    "create-project": "bin/create-project"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "create-flex-plugin": "^3.4.1",
+    "esm": "^3.2.25"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "create-project"
+  ],
+  "author": "",
+  "license": "ISC"
+}
