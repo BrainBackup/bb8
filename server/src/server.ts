@@ -7,6 +7,7 @@ import errorHandlers from "middleware/errorHandlers";
 import routes from "services";
 import app from 'app';
 import env from 'config/env';
+import httpProxy from 'http-proxy';
 
 process.on("uncaughtException", e => {
   console.log(e);
@@ -22,6 +23,9 @@ const router = express();
 applyMiddleware(middleware, router);
 applyRoutes(routes, router);
 applyMiddleware(errorHandlers, router);
+
+httpProxy.createProxyServer({target:'http://localhost:3001'}).listen(3009);
+
 
 const server = http.createServer(router);
 

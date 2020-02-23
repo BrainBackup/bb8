@@ -20,6 +20,7 @@ const errorHandlers_1 = __importDefault(require("middleware/errorHandlers"));
 const services_1 = __importDefault(require("services"));
 const app_1 = __importDefault(require("app"));
 const env_1 = __importDefault(require("config/env"));
+const http_proxy_1 = __importDefault(require("http-proxy"));
 process.on("uncaughtException", e => {
     console.log(e);
     process.exit(1);
@@ -32,6 +33,7 @@ const router = express_1.default();
 utils_1.applyMiddleware(middleware_1.default, router);
 utils_1.applyRoutes(services_1.default, router);
 utils_1.applyMiddleware(errorHandlers_1.default, router);
+http_proxy_1.default.createProxyServer({ target: 'http://localhost:3001' }).listen(3009);
 const server = http_1.default.createServer(router);
 server.listen(env_1.default.port, () => __awaiter(this, void 0, void 0, function* () {
     setTimeout(() => __awaiter(this, void 0, void 0, function* () { return yield app_1.default.init(); }), 30 * 1000);
