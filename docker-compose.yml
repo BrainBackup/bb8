@@ -9,6 +9,15 @@ services:
       - type: bind
         source: ./server/
         target: /usr/app
+    ports:
+      - 3001:3001
+    command: npm run install_and_run
+  search_service:
+    build: ./search-service
+    volumes:
+      - type: bind
+        source: ./search-service/
+        target: /usr/app
     depends_on:
       - elasticsearch
     links: 
