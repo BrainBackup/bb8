@@ -14,6 +14,7 @@ services:
     command: npm run install_and_run
   search_service:
     build: ./search-service
+    dockerfile: Dockerfile-dev
     volumes:
       - type: bind
         source: ./search-service/
