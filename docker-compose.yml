@@ -27,6 +27,7 @@ services:
     command: npm run install_and_run
   web_ui:
     build: ./web-ui
+    dockerfile: Dockerfile-dev
     volumes:
       - type: bind
         source: ./web-ui/
