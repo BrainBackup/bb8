@@ -13,6 +13,6 @@ jobs:
     - name: Build the web-ui Docker image and publish to GitHub Packages
       run: |
         VERSION=$(date +%s)
-        docker build . --file ./web-ui/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/web-ui:${VERSION}
+        docker build ./web-ui --file Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/web-ui:${VERSION}
         docker login docker.pkg.github.com --username ynahmany --password ${{ secrets.GITHUB_TOKEN }}
         docker push docker.pkg.github.com/brainbackup/code-snippet/web-ui:${VERSION}
