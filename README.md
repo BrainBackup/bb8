@@ -4,8 +4,8 @@
 
 * * *
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![Docker Image CI](https://github.com/BrainBackup/code-snippet/workflows/Docker%20Image%20CI/badge.svg?branch=master)
 ![CI](https://github.com/BrainBackup/code-snippet/workflows/CI/badge.svg?branch=master)
+![Docker ImagES Creation](https://github.com/BrainBackup/code-snippet/workflows/Docker%20Image%20CI/badge.svg?branch=master)
 ## Overview
 * Provide users an ability to save code snippets, highlighted data from anywhere on the web.
 * Code snippets will be provided once the user starts typing in an IDE, searching, and analytics using a web application.
