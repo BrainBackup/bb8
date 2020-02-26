@@ -38,6 +38,7 @@ services:
     command: npm run start
   auth_service:
     build: ./auth-service
+    dockerfile: Dockerfile-dev
     volumes:
       - type: bind
         source: ./auth-service/

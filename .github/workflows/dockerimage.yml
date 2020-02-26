@@ -22,3 +22,9 @@ jobs:
         docker build ./search-service --file ./search-service/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/search-service:${VERSION}
         docker login docker.pkg.github.com --username ynahmany --password ${{ secrets.GITHUB_TOKEN }}
         docker push docker.pkg.github.com/brainbackup/code-snippet/search-service:${VERSION}
+    - name: Build the Search-service Docker image and publish to GitHub Packages
+      run: |
+        VERSION=latest
+        docker build ./auth-service --file ./auth-service/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/auth-service:${VERSION}
+        docker login docker.pkg.github.com --username ynahmany --password ${{ secrets.GITHUB_TOKEN }}
+        docker push docker.pkg.github.com/brainbackup/code-snippet/auth-service:${VERSION}
