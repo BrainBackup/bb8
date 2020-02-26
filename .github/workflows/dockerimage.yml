@@ -9,24 +9,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Build the web-ui Docker image and publish to GitHub Packages
+    - name: Build the $SERVICE_NAME Docker image and publish to GitHub Packages
       run: |
-        docker build ./web-ui --file ./web-ui/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/web-ui:$VERSION
+        docker build ./$SERVICE_NAME --file ./SERVICE_NAME/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
         docker login docker.pkg.github.com --username ynahmany --password ${{ secrets.GITHUB_TOKEN }}
-        docker push docker.pkg.github.com/brainbackup/code-snippet/web-ui:$VERSION
+        docker push docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
       env:
         VERSION: latest
-    - name: Build the Search-service Docker image and publish to GitHub Packages
+        SERVICE_NAME: web-ui
+    - name: Build the $SERVICE_NAME Docker image and publish to GitHub Packages
       run: |
-        docker build ./search-service --file ./search-service/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/search-service:$VERSION
+        docker build ./$SERVICE_NAME --file ./$SERVICE_NAME/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
         docker login docker.pkg.github.com --username ynahmany --password ${{ secrets.GITHUB_TOKEN }}
-        docker push docker.pkg.github.com/brainbackup/code-snippet/search-service:$VERSION
+        docker push docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
       env:
         VERSION: latest
+        SERVICE_NAME: search-service
     - name: Build the Auth service Docker image and publish to GitHub Packages
       run: |
-        docker build ./auth-service --file ./auth-service/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/auth-service:$VERSION
+        docker build ./$SERVICE_NAME --file ./$SERVICE_NAME/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
         docker login docker.pkg.github.com --username ynahmany --password ${{ secrets.GITHUB_TOKEN }}
-        docker push docker.pkg.github.com/brainbackup/code-snippet/auth-service:$VERSION
+        docker push docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
       env:
         VERSION: latest
+        SERVICE_NAME: auth-service
