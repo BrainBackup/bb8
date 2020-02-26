@@ -13,8 +13,9 @@ services:
       - 3001:3001
     command: npm run install_and_run
   search_service:
-    build: ./search-service
-    dockerfile: Dockerfile-dev
+    build:
+      context: ./search-service
+      dockerfile: Dockerfile-dev
     volumes:
       - type: bind
         source: ./search-service/
@@ -27,8 +28,9 @@ services:
       - 3009:3009
     command: npm run install_and_run
   web_ui:
-    build: ./web-ui
-    dockerfile: Dockerfile-dev
+    build:
+      context: ./web-ui
+      dockerfile: Dockerfile-dev
     volumes:
       - type: bind
         source: ./web-ui/
@@ -37,8 +39,9 @@ services:
       - 3003:3003
     command: npm run start
   auth_service:
-    build: ./auth-service
-    dockerfile: Dockerfile-dev
+    build:
+      context: ./auth-service
+      dockerfile: Dockerfile-dev
     volumes:
       - type: bind
         source: ./auth-service/
