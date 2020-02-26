@@ -30,5 +30,3 @@
 ### Test NLP service
 * MLQA reserch from Facebook® should be a good start. 
 
-### Research
-* new repository will be created soon.
