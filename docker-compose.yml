@@ -3,15 +3,6 @@
 version: '3.6'
 
 services:
-  server:
-    build: ./server
-    volumes:
-      - type: bind
-        source: ./server/
-        target: /usr/app
-    ports:
-      - 3001:3001
-    command: npm run install_and_run
   search_service:
     build:
       context: ./search-service
@@ -66,8 +57,6 @@ services:
       - 5601:5601
     environment:
       ELASTICSEARCH_HOSTS: http://elasticsearch:9200
-    # volumes:
-    #   - ./kibana.yml:/usr/share/kibana/config/kibana.yml
   rabbitmq:
     image: rabbitmq
     ports:
