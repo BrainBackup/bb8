@@ -7,22 +7,26 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    env:
-      VERSION: latest
     steps:
     - uses: actions/checkout@v1
     - name: Build the web-ui Docker image and publish to GitHub Packages
       run: |
-        docker build ./web-ui --file ./web-ui/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/web-ui:${env.VERSION}
+        docker build ./web-ui --file ./web-ui/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/web-ui:$VERSION
         docker login docker.pkg.github.com --username ynahmany --password ${{ secrets.GITHUB_TOKEN }}
-        docker push docker.pkg.github.com/brainbackup/code-snippet/web-ui:${env.VERSION}
+        docker push docker.pkg.github.com/brainbackup/code-snippet/web-ui:$VERSION
+      env:
+        VERSION: latest
     - name: Build the Search-service Docker image and publish to GitHub Packages
       run: |
-        docker build ./search-service --file ./search-service/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/search-service:${env.VERSION}
+        docker build ./search-service --file ./search-service/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/search-service:$VERSION
         docker login docker.pkg.github.com --username ynahmany --password ${{ secrets.GITHUB_TOKEN }}
-        docker push docker.pkg.github.com/brainbackup/code-snippet/search-service:${env.VERSION}
+        docker push docker.pkg.github.com/brainbackup/code-snippet/search-service:$VERSION
+      env:
+        VERSION: latest
     - name: Build the Auth service Docker image and publish to GitHub Packages
       run: |
-        docker build ./auth-service --file ./auth-service/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/auth-service:${env.VERSION}
+        docker build ./auth-service --file ./auth-service/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/auth-service:$VERSION
         docker login docker.pkg.github.com --username ynahmany --password ${{ secrets.GITHUB_TOKEN }}
-        docker push docker.pkg.github.com/brainbackup/code-snippet/auth-service:${env.VERSION}
+        docker push docker.pkg.github.com/brainbackup/code-snippet/auth-service:$VERSION
+      env:
+        VERSION: latest
