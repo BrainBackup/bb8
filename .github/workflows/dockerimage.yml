@@ -8,7 +8,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      VERSION=latest
+      VERSION: latest
     steps:
     - uses: actions/checkout@v1
     - name: Build the web-ui Docker image and publish to GitHub Packages
