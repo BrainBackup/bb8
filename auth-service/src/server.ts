@@ -7,6 +7,8 @@ import errorHandlers from "middleware/errorHandlers";
 import routes from "services";
 import app from 'app';
 import env from 'config/env';
+import passport from 'passport';
+
 
 process.on("uncaughtException", e => {
   console.log(e);
@@ -22,6 +24,7 @@ const router = express();
 applyMiddleware(middleware, router);
 applyRoutes(routes, router);
 applyMiddleware(errorHandlers, router);
+applyMiddleware(errorHandlers, passport.initialize());
 
 const server = http.createServer(router);
 
