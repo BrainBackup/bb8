@@ -62,4 +62,15 @@ services:
     ports:
       - "15672:15672"
       - "5672:5672"
+  mysql:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: w3lc0me!
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080    
 
