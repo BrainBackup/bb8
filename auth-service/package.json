@@ -1,7 +1,7 @@
 {
-  "name": "code-snippet-server",
+  "name": "auth-service",
   "version": "0.0.1",
-  "description": "Server for the code snippets project",
+  "description": "Authentication service for brain backup org",
   "main": "index.js",
   "scripts": {
     "postinstall": "npx tsc",
@@ -62,7 +62,11 @@
     "uuid": "^3.3.3"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.29",
     "@types/jest": "^23.3.10",
+    "@types/mysql": "^2.15.9",
+    "@types/passport": "^1.0.2",
+    "@types/validator": "^12.0.1",
     "jest": "^23.6.0",
     "ts-jest": "^23.10.5"
   }

@@ -24,7 +24,8 @@ const router = express();
 applyMiddleware(middleware, router);
 applyRoutes(routes, router);
 applyMiddleware(errorHandlers, router);
-applyMiddleware(errorHandlers, passport.initialize());
+// passport.initialize();
+// applyMiddleware(middleware, );
 
 const server = http.createServer(router);
 
