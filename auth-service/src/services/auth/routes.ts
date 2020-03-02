@@ -13,6 +13,16 @@ export default [
         ]
     },
     {
+        path: 'auth/twitter',
+        method: 'get',
+        handler: [
+            async ({ query }: Request, res: Response) => {
+                // const result = await fetch(query);
+                res.status(200).send('result');
+            }
+        ]
+    },
+    {
         path: 'auth/twitter/redirect',
         method: 'get',
         handler: [
