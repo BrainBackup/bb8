@@ -10,7 +10,9 @@ interface Snippet {
 }
 export const fetch = async (params: any) => {
   try {
-      console.log('DB', DB);
+    //   console.log('DB', DB);
+    await DB.authenticate();
+    console.log('Connection has been established successfully.');
     // const params1: RequestParams.Search = {
     //   index: SNIPPET_INDEX
     // }
