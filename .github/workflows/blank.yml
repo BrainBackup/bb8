@@ -6,12 +6,13 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    env: auth-service
     steps:
     - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - name: Running linter
+      run: yarn run lint
+    # - name: Build the Auth service Docker image and publish to GitHub Packages
+    #   run: |
+    #     docker build ./$SERVICE_NAME --file ./$SERVICE_NAME/Dockerfile --tag docker.pkg.github.com/brainbackup/bb8/$SERVICE_NAME:$VERSION
+    #     docker login docker.pkg.github.com --username ynahmany --password ${{ secrets.GITHUB_TOKEN }}
+    #     docker push docker.pkg.github.com/brainbackup/bb8/$SERVICE_NAME:$VERSION
