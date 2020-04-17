@@ -33,4 +33,4 @@ jobs:
         docker push docker.pkg.github.com/brainbackup/bb8/$SERVICE_NAME:$VERSION
       env:
         VERSION: latest
-        SERVICE_NAME: auth-service
+        SERVICE_NAME: auth-service2
