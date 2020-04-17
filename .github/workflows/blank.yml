@@ -6,7 +6,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    env: auth-service
+    env: ./auth-service
     steps:
     - uses: actions/checkout@v2
     - name: Running linter
