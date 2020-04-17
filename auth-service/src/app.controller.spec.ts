@@ -16,7 +16,7 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+      expect(appController.checkHealth()).toStrictEqual({"services": [{"name": "mysql", "status": "UP", "version": "10.1.2"}], "status": "UP"});
     });
   });
 });
