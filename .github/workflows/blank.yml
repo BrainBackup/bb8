@@ -10,6 +10,9 @@ jobs:
       working-directory: ./auth-service
     steps:
     - uses: actions/checkout@v2
+    - name: Build
+      run: yarn
+      working-directory: ${{ env.working-directory }}
     - name: Running linter
       run: yarn run lint
       working-directory: ${{ env.working-directory }}
