@@ -16,6 +16,15 @@ jobs:
     - name: Running linter
       run: yarn run lint
       working-directory: ${{ env.working-directory }}
+    - name: Running Unit tests
+      run: yarn run test
+      working-directory: ${{ env.working-directory }}
+    - name: Running e2e tests
+      run: yarn run test:e2e
+      working-directory: ${{ env.working-directory }}
+    - name: Running tests coverage
+      run: yarn run test:cov
+      working-directory: ${{ env.working-directory }}
     # - name: Build the Auth service Docker image and publish to GitHub Packages
     #   run: |
     #     docker build ./$SERVICE_NAME --file ./$SERVICE_NAME/Dockerfile --tag docker.pkg.github.com/brainbackup/bb8/$SERVICE_NAME:$VERSION
