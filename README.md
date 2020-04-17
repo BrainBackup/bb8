@@ -29,8 +29,3 @@
 
 ### Test NLP service
 * MLQA reserch from Facebook® should be a good start. 
-
-### Covid-19
-
-Due to the Covid-19 outbreak around the world, some of the features has been postponed.
-
