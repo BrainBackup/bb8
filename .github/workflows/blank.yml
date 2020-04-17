@@ -27,10 +27,10 @@ jobs:
       working-directory: ${{ env.working-directory }}
     - name: Build the Auth service Docker image and publish to GitHub Packages
       working-directory: ${{ env.working-directory }}
-      env:
-        VERSION: latest
-        SERVICE_NAME: auth-service
       run: |
         docker build . --tag docker.pkg.github.com/brainbackup/bb8/$SERVICE_NAME:$VERSION
         docker login docker.pkg.github.com --username ynahmany --password ${{ secrets.GITHUB_TOKEN }}
         docker push docker.pkg.github.com/brainbackup/bb8/$SERVICE_NAME:$VERSION
+      env:
+        VERSION: latest
+        SERVICE_NAME: auth-service
