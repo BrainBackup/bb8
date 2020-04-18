@@ -18,7 +18,9 @@ export class UsersService {
             where: [{ "id": _id }]
         });
     }
-
+    async createUser(user: Users) {
+        this.usersRepository.save(user);
+    }
     async updateUser(user: Users) {
         this.usersRepository.save(user)
     }
