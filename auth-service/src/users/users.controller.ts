@@ -1,12 +1,12 @@
 import { Controller, Post, Body, Get, Put, Delete,Param} from '@nestjs/common';
 import { UsersService } from './users.service';
-import { User } from './user.entity';
+import { Users } from './user.entity';
 
 @Controller('users')
 export class UsersController {
 
     constructor(private service: UsersService) { }
-
+    
     @Get(':id')
     get(@Param() params) {
         return this.service.getUser(params.id);
@@ -18,7 +18,7 @@ export class UsersController {
     // }
 
     @Put()
-    update(@Body() user: User) {
+    update(@Body() user: Users) {
         return this.service.updateUser(user);
     }
 

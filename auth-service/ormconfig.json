@@ -6,5 +6,5 @@
     "password": "w3lc0me!",
     "database": "mysql",
     "entities": ["dist/**/*.entity.js"],
-    "synchronize": true
+    "synchronize": false
 }
