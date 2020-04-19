@@ -19,17 +19,17 @@ jobs:
     - name: Running Unit tests
       run: yarn run test
       working-directory: ${{ env.working-directory }}
-    # - name: Running e2e tests
-    #   run: yarn run test:e2e
-      # working-directory: ${{ env.working-directory }}
+    - name: Running e2e tests
+      run: yarn run test:e2e
+      working-directory: ${{ env.working-directory }}
     - name: Running tests coverage
       run: yarn run test:cov
       working-directory: ${{ env.working-directory }}
-    - name: Run Snyk to check for vulnerabilities
-      uses: snyk/actions/node@master
-      env:
-        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        working-directory: ${{ env.working-directory }} 
+    # - name: Run Snyk to check for vulnerabilities
+    #   uses: snyk/actions/node@master
+    #   env:
+    #     SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+    #     working-directory: ${{ env.working-directory }} 
     - name: Build the Auth service Docker image and publish to GitHub Packages
       working-directory: ${{ env.working-directory }}
       run: |
