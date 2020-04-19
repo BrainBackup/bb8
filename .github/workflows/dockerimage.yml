@@ -1,35 +1,35 @@
-name: Docker Image CI
+# name: Docker Image CI
 
-on: [push]
+# on: [push]
 
-jobs:
+# jobs:
 
-  build:
+#   build:
 
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - name: Build the $SERVICE_NAME Docker image and publish to GitHub Packages
-      run: |
-        docker build ./$SERVICE_NAME --file ./$SERVICE_NAME/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
-        docker login docker.pkg.github.com --username ynahmany --password ${{ secrets.GITHUB_TOKEN }}
-        docker push docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
-      env:
-        VERSION: latest
-        SERVICE_NAME: web-ui
-    - name: Build the $SERVICE_NAME Docker image and publish to GitHub Packages
-      run: |
-        docker build ./$SERVICE_NAME --file ./$SERVICE_NAME/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
-        docker login docker.pkg.github.com --username ynahmany --password ${{ secrets.GITHUB_TOKEN }}
-        docker push docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
-      env:
-        VERSION: latest
-        SERVICE_NAME: search-service
-    - name: Build the Auth service Docker image and publish to GitHub Packages
-      run: |
-        docker build ./$SERVICE_NAME --file ./$SERVICE_NAME/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
-        docker login docker.pkg.github.com --username ynahmany --password ${{ secrets.GITHUB_TOKEN }}
-        docker push docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
-      env:
-        VERSION: latest
-        SERVICE_NAME: auth-service
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v1
+#     - name: Build the $SERVICE_NAME Docker image and publish to GitHub Packages
+#       run: |
+#         docker build ./$SERVICE_NAME --file ./$SERVICE_NAME/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
+#         docker login docker.pkg.github.com --username ynahmany --password ${{ secrets.GITHUB_TOKEN }}
+#         docker push docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
+#       env:
+#         VERSION: latest
+#         SERVICE_NAME: web-ui
+#     - name: Build the $SERVICE_NAME Docker image and publish to GitHub Packages
+#       run: |
+#         docker build ./$SERVICE_NAME --file ./$SERVICE_NAME/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
+#         docker login docker.pkg.github.com --username ynahmany --password ${{ secrets.GITHUB_TOKEN }}
+#         docker push docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
+#       env:
+#         VERSION: latest
+#         SERVICE_NAME: search-service
+#     - name: Build the Auth service Docker image and publish to GitHub Packages
+#       run: |
+#         docker build ./$SERVICE_NAME --file ./$SERVICE_NAME/Dockerfile --tag docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
+#         docker login docker.pkg.github.com --username ynahmany --password ${{ secrets.GITHUB_TOKEN }}
+#         docker push docker.pkg.github.com/brainbackup/code-snippet/$SERVICE_NAME:$VERSION
+#       env:
+#         VERSION: latest
+#         SERVICE_NAME: auth-service
