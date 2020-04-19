@@ -9,8 +9,8 @@ export class Users {
     @Column({ length: 25 })
     fullName:string;
 
-    @Column('date') 
-    birthday:Date;
+    // @Column('date') 
+    // birthday:Date;
 
     @Column() 
     isActive:boolean;

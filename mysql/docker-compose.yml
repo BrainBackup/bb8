@@ -7,6 +7,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: w3lc0me!
+      MYSQL_DATABASE: auth_service
     ports:
     - 3306:3306
   adminer:
