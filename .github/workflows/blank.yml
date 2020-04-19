@@ -13,15 +13,21 @@ jobs:
     - name: Build
       run: yarn
       working-directory: ${{ env.working-directory }}
+  
+  tests:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./auth-service
+    steps:
     - name: Running linter
       run: yarn run lint
       working-directory: ${{ env.working-directory }}
     - name: Running Unit tests
       run: yarn run test
       working-directory: ${{ env.working-directory }}
-    # - name: Running e2e tests
-    #   run: yarn run test:e2e
-    #   working-directory: ${{ env.working-directory }}
+    - name: Running e2e tests
+      run: yarn run test:e2e
+      working-directory: ${{ env.working-directory }}
     - name: Running tests coverage
       run: yarn run test:cov
       working-directory: ${{ env.working-directory }}
@@ -30,12 +36,6 @@ jobs:
     #   env:
     #     SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     #     working-directory: ${{ env.working-directory }} 
-  publish-docker:
-
-    runs-on: ubuntu-latest
-    env:
-      working-directory: ./auth-service
-    steps:
     - name: Build the Auth service Docker image and publish to GitHub Packages
       working-directory: ${{ env.working-directory }}
       run: |
