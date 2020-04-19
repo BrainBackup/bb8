@@ -13,12 +13,6 @@ jobs:
     - name: Build
       run: yarn
       working-directory: ${{ env.working-directory }}
-  
-  tests:
-    runs-on: ubuntu-latest
-    env:
-      working-directory: ./auth-service
-    steps:
     - name: Running linter
       run: yarn run lint
       working-directory: ${{ env.working-directory }}
