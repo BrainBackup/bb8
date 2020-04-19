@@ -27,9 +27,4 @@ describe('AppController (e2e)', () => {
       .get('/users/15')
       .expect(200);
   });
-//   it('/auth (GET)', () => {
-//     return request(app.getHttpServer())
-//       .get('/auth')
-//       .expect(200);
-//   });
 });
