@@ -21,7 +21,7 @@ jobs:
       working-directory: ${{ env.working-directory }}
     # - name: Running e2e tests
     #   run: yarn run test:e2e
-      working-directory: ${{ env.working-directory }}
+      # working-directory: ${{ env.working-directory }}
     - name: Running tests coverage
       run: yarn run test:cov
       working-directory: ${{ env.working-directory }}
