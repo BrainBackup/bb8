@@ -5,7 +5,6 @@ import { AuthenticationController } from './authentication/authentication.contro
 import { AuthenticationService } from './authentication/authentication.service';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Connection } from 'typeorm';
 
 
 @Module({
@@ -17,6 +16,4 @@ import { Connection } from 'typeorm';
   controllers: [AppController, AuthenticationController],
   providers: [AppService, AuthenticationService, ],
 })
-export class AppModule {
-  constructor(private readonly connection: Connection) {}
-}
+export class AppModule{}
