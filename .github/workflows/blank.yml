@@ -29,7 +29,7 @@ jobs:
       uses: snyk/actions/node@master
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-      run: sync auth
+      run: snyk auth
     - name: Build the Auth service Docker image and publish to GitHub Packages
       working-directory: ${{ env.working-directory }}
       run: |
