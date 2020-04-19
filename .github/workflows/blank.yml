@@ -25,8 +25,10 @@ jobs:
     - name: Running tests coverage
       run: yarn run test:cov
       working-directory: ${{ env.working-directory }}
-    - name: Snyk
-      uses: snyk/actions@0.1.1    
+    - name: Run Snyk to check for vulnerabilities
+      uses: snyk/actions/node@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     - name: Build the Auth service Docker image and publish to GitHub Packages
       working-directory: ${{ env.working-directory }}
       run: |
