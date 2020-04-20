@@ -18,18 +18,6 @@ jobs:
         yarn run test:e2e
         yarn run test:cov
       working-directory: ${{ env.working-directory }}
-    # - name: Running linter
-    #   run: yarn run lint
-    #   working-directory: ${{ env.working-directory }}
-    # - name: Running Unit tests
-    #   run: yarn run test
-    #   working-directory: ${{ env.working-directory }}
-    # - name: Running e2e tests
-    #   run: yarn run test:e2e
-    #   working-directory: ${{ env.working-directory }}
-    # - name: Running tests coverage
-    #   run: yarn run test:cov
-    #   working-directory: ${{ env.working-directory }}
     - name: Run Snyk to check for vulnerabilities
       uses: snyk/actions/node@master
       env:
