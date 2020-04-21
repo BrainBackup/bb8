@@ -45,7 +45,7 @@
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^5.0.0-alpha.7",
-    "pm2": "^3.2.9",
+    "pm2": "^4.3.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
     "supertest": "^3.4.1",
