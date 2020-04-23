@@ -1,5 +1,5 @@
 {
-  "name": "@bb/types",
+  "name": "@brain-backup/types",
   "version": "1.0.0",
   "description": "types for Brain backup(bb) organization.",
   "main": "index.js",
