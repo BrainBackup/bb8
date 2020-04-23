@@ -6,18 +6,15 @@ jobs:
 
   publish-gpr:
     runs-on: ubuntu-latest
-    env:
-        working-directory: ./types
     steps:
         - uses: actions/checkout@v2
         - uses: actions/setup-node@v1
           with:
             node-version: 12
-            registry-url: https://npm.pkg.github.com/
+            registry-url: https://registry.npmjs.org/
         - run: |
             ls -la
             cd ./types
             npm publish
           env:
             NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-            working-directory: ${{ env.working-directory }}
