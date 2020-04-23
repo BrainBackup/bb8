@@ -6,8 +6,8 @@ jobs:
 
   publish-gpr:
     runs-on: ubuntu-latest
-    env:
-        working-directory: ./types
+    # env:
+    #     working-directory: ./types
     steps:
         - uses: actions/checkout@v2
         - uses: actions/setup-node@v1
@@ -18,4 +18,4 @@ jobs:
         - run: npm publish
           env:
             NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-            working-directory: ${{ env.working-directory }}
+            # working-directory: ${{ env.working-directory }}
