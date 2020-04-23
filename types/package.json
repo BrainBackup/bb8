@@ -1,6 +1,12 @@
 {
-    "name": "@bb/types",
-    "author": "Yohay Nahmany",
-    "version": "1.0.0",
-    "types": "./index.d.ts"
-  }
+  "name": "@bb/types",
+  "version": "1.0.0",
+  "description": "types for Brain backup(bb) organization.",
+  "main": "index.js",
+  "types": "./index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yohay Nahmany",
+  "license": "ISC"
+}

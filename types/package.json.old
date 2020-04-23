@@ -1,0 +1,6 @@
+{
+    "name": "@bb/types",
+    "author": "Yohay Nahmany",
+    "version": "1.0.0",
+    "types": "./index.d.ts"
+  }
