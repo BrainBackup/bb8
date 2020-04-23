@@ -9,12 +9,14 @@ jobs:
     steps:
         - uses: actions/checkout@v2
         - uses: actions/setup-node@v1
+        - uses: actions/typescript-action
           with:
             node-version: 12
             registry-url: https://registry.npmjs.org/
         - run: |
             cd ./types
             tsc index.ts
+            ls -la
             npm version patch
             npm publish --access public
           env:
