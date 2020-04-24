@@ -1,10 +1,13 @@
 name: NPM packages
 
-on: [push]
+on:
+    push:
+      branches:    
+        - 'releases/**' 
 
 jobs:
 
-  publish-gpr:
+  publish-npm-packges:
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v2
