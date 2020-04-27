@@ -21,8 +21,12 @@ export class UsersService {
     async createUser(user: Users) {
         this.usersRepository.save(user);
     }
-    async updateUser(user: Users) {
-        this.usersRepository.save(user)
+    async updateUser(_id: number, user: Users) {
+        const oldUser: Users = await this.usersRepository.findOne(_id)
+        this.usersRepository.save({
+            ...oldUser,
+            ...user
+        });
     }
 
     async deleteUser(user: Users) {

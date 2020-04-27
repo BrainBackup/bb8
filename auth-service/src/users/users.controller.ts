@@ -1,6 +1,7 @@
 import { Controller, Post, Body, Get, Put, Delete,Param} from '@nestjs/common';
 import { UsersService } from './users.service';
 import { Users } from './user.entity';
+import { ApiQuery } from '@nestjs/swagger';
 
 @Controller('users')
 export class UsersController {
@@ -22,8 +23,9 @@ export class UsersController {
     }
 
     @Put()
-    update(@Body() user: Users) {
-        return this.service.updateUser(user);
+    @ApiQuery({ name: 'id' })
+    update(@Param() param: Partial<Users>, @Body() user: Users) {
+        return this.service.updateUser(param.id, user);
     }
 
     @Delete(':id')
