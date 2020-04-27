@@ -4,7 +4,7 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  
+  const port = 3010;
   const options = new DocumentBuilder()
     .setTitle('Auth Service')
     .setDescription('Auth service should provide all apis for authentication and authorization for the bb projects')
@@ -13,6 +13,6 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
-  await app.listen(3010);
+  await app.listen(port);
 }
 bootstrap();
