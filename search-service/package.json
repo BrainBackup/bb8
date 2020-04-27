@@ -9,7 +9,9 @@
     "start": "tsc-watch --onSuccess \"node ./dist/server.js\"",
     "start old": "npx pm2 start pm2.yaml",
     "test": "jest",
-    "install_and_run": "npm install; npm run start"
+    "install_and_run": "npm install; npm run start",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [],
   "author": "Yohay Nahmany",
@@ -45,18 +47,20 @@
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^5.0.0-alpha.7",
-    "pm2": "^3.2.9",
+    "pm2": "^4.3.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
     "supertest": "^3.4.1",
     "swagger-ui-express": "^4.0.2",
     "tsc-watch": "^1.0.31",
     "typescript": "^3.2.2",
-    "uuid": "^3.3.3"
+    "uuid": "^3.3.3",
+    "snyk": "^1.311.0"
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",
     "jest": "^23.6.0",
     "ts-jest": "^23.10.5"
-  }
+  },
+  "snyk": true
 }
