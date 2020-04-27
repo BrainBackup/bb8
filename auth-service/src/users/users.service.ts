@@ -9,7 +9,11 @@ export class UsersService {
     constructor(@InjectRepository(Users) private usersRepository: Repository<Users>) { }
 
     async getUsers(): Promise<Users[]> {
-        return await this.usersRepository.find();
+        return await this.usersRepository.find({
+            order: {
+                salt: "ASC"
+            }
+        });
     }
 
     async getUser(_id: number): Promise<Users[]> {
@@ -22,7 +26,7 @@ export class UsersService {
         this.usersRepository.save(user);
     }
     async updateUser(_id: number, user: Users) {
-        const oldUser: Users = await this.usersRepository.findOne(_id)
+        const oldUser: Users = await this.usersRepository.findOne(_id);
         this.usersRepository.save({
             ...oldUser,
             ...user
