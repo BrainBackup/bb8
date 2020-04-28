@@ -52,7 +52,7 @@
     "request-promise": "^4.2.2",
     "supertest": "^3.4.1",
     "swagger-ui-express": "^4.0.2",
-    "tsc-watch": "^1.0.31",
+    "tsc-watch": "^1.1.39",
     "typescript": "^3.2.2",
     "uuid": "^3.3.3",
     "snyk": "^1.311.0"
