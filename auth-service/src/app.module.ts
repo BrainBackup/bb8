@@ -1,12 +1,15 @@
 import { Module, HttpModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AuthenticationController } from './authentication/authentication.controller';
-import { AuthenticationService } from './authentication/authentication.service';
+import { AuthenticationController } from './auth/auth.controller';
+import { AuthService } from './auth/auth.service';
 import { UsersModule } from './users/users.module';
+import { UsersService } from './users/users.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import configuration from './config/configuration';
+
+import { JwtService } from '@nestjs/jwt';
 const Configuration = configuration();
 
 @Module({
@@ -28,6 +31,6 @@ const Configuration = configuration();
     })
   ],
   controllers: [AppController, AuthenticationController],
-  providers: [AppService, AuthenticationService, ],
+  providers: [AppService, AuthService, UsersService, JwtService],
 })
 export class AppModule{}
