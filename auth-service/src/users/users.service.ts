@@ -24,7 +24,6 @@ export class UsersService {
     }
     async getUserByUsername(username: string): Promise<Users> {
         return await this.usersRepository.findOne({
-            select: [],
             where: [{ "username": username }]
         });
     }
