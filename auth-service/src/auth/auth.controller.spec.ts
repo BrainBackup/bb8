@@ -1,22 +1,22 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AuthenticationController } from './auth.controller';
-import { AuthenticationService } from './auth.service';
+import { AuthController } from './auth.controller';
+import { AuthService } from './auth.service';
 
-describe('AuthenticationController', () => {
-  let authenticationController: AuthenticationController;
+describe('AuthController', () => {
+  let authController: AuthController;
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
-      controllers: [AuthenticationController],
-      providers: [AuthenticationService],
+      controllers: [AuthController],
+      providers: [AuthService],
     }).compile();
 
-    authenticationController = app.get<AuthenticationController>(AuthenticationController);
+    authController = app.get<AuthController>(AuthController);
   });
 
   describe('root', () => {
     it('should return "Hello World!"', () => {
-      expect(authenticationController.getHello()).toBe('ynahmany test');
+      expect(authController.getHello()).toBe('ynahmany test');
     });
   });
 });
