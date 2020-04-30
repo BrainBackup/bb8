@@ -22,6 +22,11 @@ export class UsersService {
             where: [{ "id": _id }]
         });
     }
+    async getUserByUsername(username: string): Promise<Users> {
+        return await this.usersRepository.findOne({
+            where: [{ "username": username }]
+        });
+    }
     async createUser(user: Users) {
         this.usersRepository.save(user);
     }

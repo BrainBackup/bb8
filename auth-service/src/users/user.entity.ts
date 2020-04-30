@@ -8,6 +8,7 @@ export class Users {
     @PrimaryGeneratedColumn('increment') id: number;
     @ApiProperty() @Column({ length: 25 }) fullName : string;
     @ApiProperty() @Column() email: string;
+    @ApiProperty() @Column() username: string;
     @ApiProperty() @Column() salt: string;
     @ApiProperty() @Column() password: string;
     @ApiProperty() @Column() createdAt : Date;
