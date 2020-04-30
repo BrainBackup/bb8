@@ -1,9 +1,9 @@
 import { Module, HttpModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AuthenticationController } from './authentication/authentication.controller';
-import { AuthenticationService } from './authentication/authentication.service';
+import { AuthController } from './auth/auth.controller';
 import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import configuration from './config/configuration';
@@ -23,11 +23,12 @@ const Configuration = configuration();
       "synchronize": true
     }),
     UsersModule,
+    AuthModule,
     ConfigModule.forRoot({
       load: [configuration]
     })
   ],
-  controllers: [AppController, AuthenticationController],
-  providers: [AppService, AuthenticationService, ],
+  controllers: [AppController, AuthController],
+  providers: [AppService],
 })
 export class AppModule{}
