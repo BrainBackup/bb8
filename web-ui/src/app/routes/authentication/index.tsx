@@ -39,13 +39,21 @@ const Authentication: React.FunctionComponent<IAuth> = ({ }) => {
     [TABS.LOGIN]: <Login />,
     [TABS.REGISTER]: <Register />
   };
+  const onTwitterClick = () => {
+    fetch('https://twitter.com/oauth/request_token',
+      {
+          method: 'POST'
+      })
+      .then(data => console.log(data))
+      .catch(err => console.error(err));
+  }
   return (
     <Card className={classes.root} variant="outlined">
       <CardContent>
         <Grid container>
           <Grid item xs={5}>
             <div style={{ marginTop: 30 }}>
-              <TwitterButton onClick={() => console.log('on click')}/>
+              <TwitterButton onClick={onTwitterClick}/>
               <GithubButton onClick={() => console.log('on click')}/>
               <FacebookButton onClick={() => console.log('on click')}/>
 

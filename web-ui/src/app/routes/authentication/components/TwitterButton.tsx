@@ -3,7 +3,7 @@ import { Button } from '@material-ui/core';
 import { FaTwitter } from 'react-icons/fa';
 
 interface IButton {
-    onClick: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>
+    onClick(): void
 }
 const TwitterButton: React.FunctionComponent<IButton> = ({ onClick, ...props }) => {
     return (
@@ -11,6 +11,7 @@ const TwitterButton: React.FunctionComponent<IButton> = ({ onClick, ...props }) 
             variant="contained"
             style={{ backgroundColor: '#00acee', color: 'white', textTransform: 'none', margin: '5%' }}
             startIcon={<FaTwitter />}
+            onClick={onClick}
             fullWidth
         >
             Login With Twitter
