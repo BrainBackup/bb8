@@ -6,6 +6,8 @@ import { PassportModule } from '@nestjs/passport';
 import { LocalStrategy } from './local.strategy';
 import { jwtConstants } from './constants';
 import { JwtStrategy } from './jwt.strategy';
+import { TwitterStrategy } from './twitter.strategy';
+import { ConfigModule } from '@nestjs/config';
 
 
 @Module({
@@ -16,8 +18,9 @@ import { JwtStrategy } from './jwt.strategy';
       signOptions: { expiresIn: '60s' },
     }),
     UsersModule,
+    ConfigModule
   ],
-  providers: [AuthService, LocalStrategy, JwtStrategy],
+  providers: [AuthService, LocalStrategy, JwtStrategy, TwitterStrategy],
   exports: [AuthService],
 })
 export class AuthModule {}
