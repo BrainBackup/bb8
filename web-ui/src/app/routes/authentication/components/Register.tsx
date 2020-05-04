@@ -33,8 +33,9 @@ const IRegister: React.FunctionComponent<IRegister> = ({ }) => {
     //   .then(data => console.log(data))
     //   .catch(err => console.error(err));
     // }
-    const onSubmitNew = () => {
-        axios.get('http://localhost:3010/users/al2l').then(data => console.log(data));
+    
+    const onSubmit = () => {
+        axios.post('http://localhost:3010/users', { headers: { 'Access-Control-Allow-Origin':'*',"Access-Control-Allow-Methods":"GET,PUT,POST,DELETE","Access-Control-Allow-Headers":"Content-Type","X-Frame-Options":"ALLOWALL" }}).then(data => console.log(data));
         // fetch('http://localhost:3010/users/al2l').then(resp => console.log(resp));
     }
     return (
@@ -50,7 +51,7 @@ const IRegister: React.FunctionComponent<IRegister> = ({ }) => {
                 variant="contained"
                 style={{ backgroundColor: '#182952', color: 'white', textTransform: 'none', marginTop: '5%' }}
                 fullWidth
-                onClick={onSubmitNew}>
+                onClick={onSubmit}>
                 Register
             </Button>
         </div>
