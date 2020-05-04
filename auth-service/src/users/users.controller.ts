@@ -3,7 +3,7 @@ import { UsersService } from './users.service';
 import { Users } from './user.entity';
 import { ApiQuery, ApiParam } from '@nestjs/swagger';
 import { v4 as uuid } from 'uuid';
-import { UsersValidationPipe } from './users.validation';
+import { JoiValidationPipe } from '../validators';
 import { createSalt, hashPassword } from '../utils';
 import * as Joi from '@hapi/joi';
 
@@ -36,7 +36,7 @@ export class UsersController {
     }
 
     @Post()
-    @UsePipes(new UsersValidationPipe(createWebRegisterSchema()))
+    @UsePipes(new JoiValidationPipe(createWebRegisterSchema()))
     create(@Body() user: WebRegister) {
         // TODO: validate it has firstname, lastname, mail and password.
         const salt = createSalt();

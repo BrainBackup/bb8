@@ -16,11 +16,11 @@ export class AppController {
   checkHealth(): HealthCheck {
     return this.appService.checkHealth();
   }
-  @UseGuards(LocalAuthGuard)
-  @Post('auth/login')
-  async login(@Request() req) {
-    return this.authService.login(req.user);
-  }
+  // @UseGuards(LocalAuthGuard)
+  // @Post('auth/login')
+  // async login(@Request() req) {
+  //   return this.authService.login(req.user);
+  // }
   
   @UseGuards(JwtAuthGuard)
   @Get('profile')

@@ -1,21 +1,13 @@
-# Code snippet application
-
-
-## Contains
-
-- [x] [Typescript](https://www.typescriptlang.org/) 3.2
-
-## Code Format
+# Brain backup - web ui
 
 ```
-$ npm start
+$ yarn start
 ```
 
 ```
-$ npm install
+$ yarn install
 ```
 
 ```
-$ npm run storybook
+$ yarn run storybook
 ```
-

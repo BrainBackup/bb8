@@ -124,7 +124,7 @@ const MiniDrawer: React.FunctionComponent<NavigationInterface> = ({ children }) 
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Code Snippet Application
+            Brain Backup
           </Typography>
         </Toolbar>
       </AppBar>

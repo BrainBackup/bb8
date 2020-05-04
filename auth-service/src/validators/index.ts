@@ -2,7 +2,7 @@ import { PipeTransform, Injectable, ArgumentMetadata, BadRequestException } from
 import { ObjectSchema } from '@hapi/joi';
 
 @Injectable()
-export class UsersValidationPipe implements PipeTransform {
+export class JoiValidationPipe implements PipeTransform {
   constructor(private schema: ObjectSchema) {}
 
   transform(value: any, metadata: ArgumentMetadata) {

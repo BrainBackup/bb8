@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Button } from '@material-ui/core';
 import CustomInput from 'app/components/CustomInput';
 import Password from 'app/components/Password';
+import axios from 'axios';
 
 interface ILogin {
 
@@ -16,6 +17,9 @@ const Login: React.FunctionComponent<ILogin> = ({ }) => {
         password: ''
     };
     const [form, setForm] = React.useState(initialState);
+    const onSubmit = () => {
+        axios.post('http://localhost:3010/auth/login', form).then(data => console.log(data));
+    }
     return (
         <div>
             <CustomInput fullWidth={true} label='Mail Address' onChange={(e) => setForm({ ...form, mailAddress: e.target.value })} />
@@ -23,7 +27,8 @@ const Login: React.FunctionComponent<ILogin> = ({ }) => {
             <Button
                 variant="contained"
                 style={{ backgroundColor: '#182952', color: 'white', textTransform: 'none', marginTop: '5%' }}
-                fullWidth>
+                fullWidth
+                onClick={onSubmit}>
                 Login
             </Button>
         </div>
