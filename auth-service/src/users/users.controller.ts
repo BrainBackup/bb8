@@ -1,9 +1,11 @@
-import { Controller, Post, Body, Get, Put, Delete,Param} from '@nestjs/common';
+import { Controller, Post, Body, Get, Put, Delete, Param, UsePipes} from '@nestjs/common';
 import { UsersService } from './users.service';
 import { Users } from './user.entity';
 import { ApiQuery, ApiParam } from '@nestjs/swagger';
 import { v4 as uuid } from 'uuid';
+import { UsersValidationPipe } from './users.validation';
 import { createSalt, hashPassword } from '../utils';
+import * as Joi from '@hapi/joi';
 
 interface WebRegister {
     firstName: string;
@@ -11,6 +13,13 @@ interface WebRegister {
     mailAddress: string;
     password: string;
 }
+const createWebRegisterSchema = () =>
+    Joi.object({
+        firstName: Joi.string().required(),
+        lastName: Joi.string().required(),
+        mailAddress: Joi.string().email().required(),
+        password: Joi.string().required()
+    });
 @Controller('users')
 export class UsersController {
 
@@ -27,6 +36,7 @@ export class UsersController {
     }
 
     @Post()
+    @UsePipes(new UsersValidationPipe(createWebRegisterSchema()))
     create(@Body() user: WebRegister) {
         // TODO: validate it has firstname, lastname, mail and password.
         const salt = createSalt();
