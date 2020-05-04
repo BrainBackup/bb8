@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Button } from '@material-ui/core';
 import Password from 'app/components/Password';
 import CustomInput from 'app/components/CustomInput';
+import axios from 'axios';
 
 interface IRegister {
 
@@ -20,6 +21,22 @@ const IRegister: React.FunctionComponent<IRegister> = ({ }) => {
         password: ''
     };
     const [form, setForm] = React.useState(initialState);
+    // const onSubmit = () => {
+    //     fetch('http://localhost:3010/users',
+    //     {
+    //         method: 'POST',
+    //         body: JSON.stringify(form),
+    //         headers: {
+    //             'Access-Control-Allow-Origin': '*'
+    //         }
+    //     })
+    //   .then(data => console.log(data))
+    //   .catch(err => console.error(err));
+    // }
+    const onSubmitNew = () => {
+        axios.get('http://localhost:3010/users/al2l').then(data => console.log(data));
+        // fetch('http://localhost:3010/users/al2l').then(resp => console.log(resp));
+    }
     return (
         <div>
             {/* TODO: add header */}
@@ -33,7 +50,7 @@ const IRegister: React.FunctionComponent<IRegister> = ({ }) => {
                 variant="contained"
                 style={{ backgroundColor: '#182952', color: 'white', textTransform: 'none', marginTop: '5%' }}
                 fullWidth
-                onClick={(e) => console.log(form)}>
+                onClick={onSubmitNew}>
                 Register
             </Button>
         </div>

@@ -40,7 +40,7 @@ const Authentication: React.FunctionComponent<IAuth> = ({ }) => {
     [TABS.REGISTER]: <Register />
   };
   const onTwitterClick = () => {
-    fetch('https://twitter.com/oauth/request_token',
+    fetch('https://api.twitter.com/oauth/request_token',
       {
           method: 'POST'
       })

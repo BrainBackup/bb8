@@ -19,8 +19,11 @@ export class UsersController {
     }
 
     @Post()
-    create(@Body() user: Users) {
-        return this.service.createUser(user);
+    create(@Body() user: Partial<Users>) {
+        console.log('====================================');
+        console.log(user);
+        console.log('====================================');
+        // return this.service.createUser(user);
     }
 
     @Put()
