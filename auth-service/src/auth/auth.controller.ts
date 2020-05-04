@@ -3,7 +3,6 @@ import * as Joi from '@hapi/joi';
 import { AuthService } from './auth.service';
 import { ILogin } from './types';
 import { JoiValidationPipe } from '../validators';
-import { LocalAuthGuard } from '../auth/local-auth.guard';
 
 const createLoginSchema = () =>
     Joi.object({
@@ -15,9 +14,8 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('login')
-  @UseGuards(LocalAuthGuard)
   @UsePipes(new JoiValidationPipe(createLoginSchema()))
-  login(@Body() user: ILogin) {
-    return `user: ${JSON.stringify(user)}`;
+  async login(@Body() user: ILogin) {
+    return await this.authService.login(user);
   }
 }
