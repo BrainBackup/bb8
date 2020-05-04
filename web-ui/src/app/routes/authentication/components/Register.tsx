@@ -35,7 +35,8 @@ const IRegister: React.FunctionComponent<IRegister> = ({ }) => {
     // }
     
     const onSubmit = () => {
-        axios.post('http://localhost:3010/users', { headers: { 'Access-Control-Allow-Origin':'*',"Access-Control-Allow-Methods":"GET,PUT,POST,DELETE","Access-Control-Allow-Headers":"Content-Type","X-Frame-Options":"ALLOWALL" }}).then(data => console.log(data));
+        // , { headers: { 'Access-Control-Allow-Origin':'*',"Access-Control-Allow-Methods":"GET,PUT,POST,DELETE","Access-Control-Allow-Headers":"Content-Type","X-Frame-Options":"ALLOWALL" }}
+        axios.post('http://localhost:3010/users', form).then(data => console.log(data));
         // fetch('http://localhost:3010/users/al2l').then(resp => console.log(resp));
     }
     return (
