@@ -50,7 +50,7 @@
     "pm2": "^4.3.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.5",
-    "supertest": "^3.4.1",
+    "supertest": "^3.4.2",
     "swagger-ui-express": "^4.1.4",
     "tsc-watch": "^1.1.39",
     "typescript": "^3.8.3",
