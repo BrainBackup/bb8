@@ -1,8 +1,9 @@
 {
-  "name": "typescript-react-mobx-boilerplate",
+  "name": "web-ui",
   "version": "1.0.0",
   "private": true,
-  "description": "A frontend boilerplate with React, MobX and Typescript",
+  "description": "Web application for brain backup project",
+  "author": "Yohay Nahmany",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

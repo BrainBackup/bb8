@@ -1,7 +1,7 @@
 {
   "name": "search-service",
   "version": "0.0.1",
-  "description": "Search service for the code snippets project",
+  "description": "Search service",
   "main": "index.js",
   "scripts": {
     "postinstall": "npx tsc",

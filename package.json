@@ -1,0 +1,8 @@
+{
+    "private": true,
+    "workspaces": [
+        "auth-service",
+        "search-service",
+        "web-ui"
+    ]
+}
