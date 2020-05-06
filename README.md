@@ -1,6 +1,6 @@
 # BB8: modular, powerful and extendable project for memory improvment
 
-<img alt="CodeSnippet" src="logo.png" width="356px" style="margin-left: 28%">
+<img alt="brain-backup" style="margin-left: 28%" src="logo.png" width="356px">
 
 
 * * *
