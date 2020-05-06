@@ -4,7 +4,7 @@
 
 `$ docker-compose up --build`
 
-## Connect to web ui - Adminer.
+## Connect to web ui - Adminer
 
 `$ open localhost:8080`
 

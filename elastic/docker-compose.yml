@@ -1,0 +1,18 @@
+version: '3.6'
+
+services:
+    elasticsearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
+        container_name: elasticsearch
+        environment:
+            - discovery.type=single-node
+        ports:
+            - 9300:9300
+            - 9200:9200
+    kibana:
+        image: docker.elastic.co/kibana/kibana:7.5.2
+        container_name: kibana
+        ports:
+            - 5601:5601
+        environment:
+            ELASTICSEARCH_HOSTS: http://localhost:9200

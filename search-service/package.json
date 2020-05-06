@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "npx tsc",
     "dev": "tsc-watch --onSuccess \"node ./dist/server.js\"",
-    "start": "tsc-watch --onSuccess \"node ./dist/server.js\"",
+    "start:dev": "tsc-watch --onSuccess \"node ./dist/server.js\"",
     "start old": "npx pm2 start pm2.yaml",
     "test": "jest",
     "install_and_run": "npm install; npm run start",
