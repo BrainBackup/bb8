@@ -41,3 +41,15 @@
 ### Test NLP service
 
 * MLQA reserch from Facebook® should be a good start.
+
+### Authentication service
+
+* Require mysql: `cd mysql && docker-compose up`
+* Running locally: `cd auth-service && yarn start:dev`
+* Swagger: go to `http://localhost:3010/api/`
+* Health check: `http://localhost:3010/health`
+
+### Search service
+
+* Require elastic: ``
+* Running locally: ``
