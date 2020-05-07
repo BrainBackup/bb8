@@ -54,7 +54,7 @@
     "swagger-ui-express": "^4.1.4",
     "tsc-watch": "^1.1.39",
     "typescript": "^3.8.3",
-    "uuid": "^3.3.3",
+    "uuid": "^3.4.0",
     "snyk": "^1.316.1"
   },
   "devDependencies": {
