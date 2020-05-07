@@ -51,5 +51,6 @@
 
 ### Search service
 
-* Require elastic: ``
-* Running locally: ``
+* Require elastic: `cd elastic && docker-compose up`
+* Running locally: `cd search-service && yarn start:dev`
+* Health check: `http://localhost:3009/api/v1/health`
