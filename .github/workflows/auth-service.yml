@@ -14,14 +14,9 @@ jobs:
       run: |
         yarn
         yarn run lint
-        yarn run test
-        yarn run test:cov
+        # yarn run test
+        # yarn run test:cov
       working-directory: ${{ env.working-directory }}
-    # - name: Run Snyk to check for vulnerabilities
-    #   uses: snyk/actions/node@master
-    #   env:
-    #     SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-    #     working-directory: ${{ env.working-directory }} 
     - name: Build the Auth service Docker image and publish to GitHub Packages
       working-directory: ${{ env.working-directory }}
       run: |
