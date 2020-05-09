@@ -19,7 +19,7 @@ const GetClient = () => {
     return client;
 }
 interface Body {
-    properties: Object
+    properties: Record<string, any>
 }
 interface Scheme {
     index: string,

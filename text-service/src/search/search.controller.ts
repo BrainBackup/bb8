@@ -2,13 +2,13 @@ import { Controller, Get, Post, Body } from '@nestjs/common';
 import { SearchService } from './search.service';
 
 import Elastic from '../elastic';
-import { Client, ApiResponse, RequestParams } from '@elastic/elasticsearch'
+import { ApiResponse, RequestParams } from '@elastic/elasticsearch'
 const SNIPPET_INDEX = Elastic.SchemesNameToIndices['snippets'].index;
 
 interface Snippet {
-    pageUrl: String,
-    selectionText: String,
-    menuItemId: String
+    pageUrl: string,
+    selectionText: string,
+    menuItemId: string
   }
 
 @Controller('search')
