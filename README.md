@@ -49,8 +49,9 @@
 * Swagger: go to `http://localhost:3010/api/`
 * Health check: `http://localhost:3010/health`
 
-### Search service
+### Text service
 
 * Require elastic: `cd elastic && docker-compose up`
-* Running locally: `cd search-service && yarn start:dev`
-* Health check: `http://localhost:3009/api/v1/health`
+* Running locally: `cd text-service && yarn start:dev`
+* Swagger: go to `http://localhost:3009/api/`
+* Health check: `http://localhost:3009/health`

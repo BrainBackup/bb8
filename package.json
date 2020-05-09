@@ -3,6 +3,7 @@
     "workspaces": [
         "auth-service",
         "search-service",
+        "text-service",
         "web-ui"
     ]
 }
