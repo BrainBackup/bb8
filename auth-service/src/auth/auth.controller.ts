@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, UsePipes, UseGuards } from '@nestjs/common';
+import { Controller, Post, Body, UsePipes } from '@nestjs/common';
 import * as Joi from '@hapi/joi';
 import { AuthService } from './auth.service';
 import { ILogin } from './types';

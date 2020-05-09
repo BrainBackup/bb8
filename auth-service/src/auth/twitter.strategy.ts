@@ -1,8 +1,7 @@
-import { ExtractJwt, Strategy } from 'passport-twitter';
+import { Strategy } from 'passport-twitter';
 import { PassportStrategy } from '@nestjs/passport';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-// import { jwtConstants } from './constants';
 
 @Injectable()
 export class TwitterStrategy extends PassportStrategy(Strategy) {

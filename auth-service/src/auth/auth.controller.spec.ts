@@ -15,8 +15,8 @@ describe('AuthController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      // expect(authController.logi).toBe('ynahmany test');
+    it('Login', () => {
+      expect(authController.login).toBe('ynahmany test');
     });
   });
 });

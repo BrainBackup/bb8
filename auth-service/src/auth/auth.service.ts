@@ -14,8 +14,14 @@ export class AuthService {
   async validateUser(mailAddress: string, password: string): Promise<any> {
     const user = await this.usersService.getUserByMailAddress(mailAddress);
     if (user && user.isActive && user.password === hashPassword(password, user.salt)) {
-      const { password, salt, isActive, isVerified, confirmationToken, ...result } = user;
-      return result;
+      return {
+        id: user.id,
+        fullName: user.fullName,
+        isAdmin: user.isAdmin,
+        email: user.email,
+        username: user.username,
+        createdAt: user.createdAt
+      }
     }
     throw new UnauthorizedException();
   }
