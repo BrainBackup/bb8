@@ -16,10 +16,7 @@ describe('UsersController', () => {
 
   describe('Get', () => {
       it('', () => {
-          expect(false).toBeFalsy()
+          expect(usersController.get(0)).toBeFalsy();
       })
-    // it('Health check function', () => {
-    //   expect(usersController.get).toStrictEqual({"services": [{"name": "mysql", "status": "UP", "version": "10.1.2"}], "status": "UP"});
-    // });
   });
 });
