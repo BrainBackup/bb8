@@ -1,9 +1,9 @@
-interface IDatabase { 
+interface IElastic { 
     host: string;
     port: number;
-    username: string;
-    password: string;
-    name: string;
+    username?: string;
+    password?: string;
+    name?: string;
 }
 interface Auth {
     key: string;
@@ -12,7 +12,7 @@ interface Auth {
 }
 interface Configuration {
     port: number,
-    database: IDatabase,
+    elastic: IElastic,
     twitter?: Auth
 }
 interface ConfigurationResult {
@@ -23,9 +23,9 @@ interface ConfigurationResult {
 const configuration: ConfigurationResult = {
     development: {
         port: parseInt(process.env.PORT, 10) || 3009,
-        database: {
+        elastic: {
             host: 'localhost',
-            port: 3306,
+            port: 9200,
             username: 'root',
             password: 'w3lc0me!',
             name: 'auth_service',
@@ -33,9 +33,9 @@ const configuration: ConfigurationResult = {
     },
     testing: {
         port: parseInt(process.env.PORT, 10) || 3009,
-        database: {
+        elastic: {
             host: 'localhost',
-            port: 3306,
+            port: 9200,
             username: 'root',
             password: 'w3lc0me!',
             name: 'auth_service',
