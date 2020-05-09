@@ -33,9 +33,6 @@ export class SearchController {
     // @UsePipes(new JoiValidationPipe(createWebRegisterSchema()))
     async createText(@Body() data: Snippet): Promise<any> {
         try {
-            console.log('====================================');
-            console.log(data);
-            console.log('====================================');
             const client = Elastic.GetClient();
             const doc: RequestParams.Index = {
             index: SNIPPET_INDEX,
