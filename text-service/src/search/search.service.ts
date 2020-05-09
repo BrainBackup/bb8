@@ -1,7 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { SearchModule as ElasticsearchService } from './elasticsearch.module';
+// import { ElasticModule } from './elastic.module';
 @Injectable()
 export class SearchService {
-  constructor(private readonly elasticsearchService: ElasticsearchService) {}
+  // constructor(private readonly elasticService: ElasticModule) {}
+
+  getTest() {
+    return 'another text';
+  }
 
 }

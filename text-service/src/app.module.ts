@@ -1,11 +1,21 @@
-import { Module } from '@nestjs/common';
+import { Module, HttpModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SearchController } from './search/search.controller';
+import { ConfigModule } from '@nestjs/config';
+import configuration from './config/configuration';
+import { SearchService } from './search/search.service';
+// import { ElasticModule } from './search/elastic.module';
+const Configuration = configuration();
 
 @Module({
-  imports: [],
+  imports: [
+    HttpModule,
+    ConfigModule.forRoot({
+      load: [configuration]
+    })
+  ],
   controllers: [AppController, SearchController],
-  providers: [AppService],
+  providers: [AppService, SearchService],
 })
 export class AppModule {}
