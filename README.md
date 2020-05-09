@@ -9,6 +9,7 @@
 ![Docker Images Creation](https://github.com/BrainBackup/code-snippet/workflows/Docker%20Image%20CI/badge.svg?branch=master)
 ![Auth-service](https://github.com/BrainBackup/bb8/workflows/Auth-service/badge.svg)
 ![NPM packages](https://github.com/BrainBackup/bb8/workflows/NPM%20packages/badge.svg)
+![Text-service](https://github.com/BrainBackup/bb8/workflows/Text-service/badge.svg)
 
 ## Overview
 
