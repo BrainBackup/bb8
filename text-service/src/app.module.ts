@@ -5,7 +5,6 @@ import { SearchController } from './search/search.controller';
 import { ConfigModule } from '@nestjs/config';
 import configuration from './config/configuration';
 import { SearchService } from './search/search.service';
-// import { ElasticModule } from './search/elastic.module';
 const Configuration = configuration();
 
 @Module({

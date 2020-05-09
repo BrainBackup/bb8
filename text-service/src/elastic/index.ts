@@ -1,8 +1,18 @@
-import Utils from 'utils/utils';
-import env from 'config/env';
-import { Client as NativeClient, ApiResponse, RequestParams } from '@elastic/elasticsearch'
+// import Utils from 'utils/utils';
+// import env from 'config/env';
+import { Client as NativeClient, ApiResponse, RequestParams } from '@elastic/elasticsearch';
+const convertArrayToObject = (array: any, key: string) => {
+    const initialValue = {};
+    return array.reduce((obj: any, item: any) => {
+        return {
+        ...obj,
+        [item[key]]: item,
+        };
+    }, initialValue);
+};
 const client = new NativeClient({ 
-    node: `http://${env.elastic.host}:${env.elastic.port}`
+    node: 'http://localhost:9200'
+    // node: `http://${env.elastic.host}:${env.elastic.port}`
 });
 
 
@@ -34,7 +44,7 @@ const Test: Scheme = {
     body: Object.create({})
 }
 const Schemes: Array<Scheme> = [Snippets, Test];
-const SchemesNameToIndices = Utils.convertArrayToObject(Schemes, 'index');
+const SchemesNameToIndices = convertArrayToObject(Schemes, 'index');
 
 const init = async (): Promise<any> => {
     try {
@@ -54,6 +64,5 @@ const init = async (): Promise<any> => {
         throw err;
     }
 }
-
 
 export default { GetClient, Schemes, SchemesNameToIndices, init };
