@@ -1,6 +1,6 @@
-// import Utils from 'utils/utils';
-// import env from 'config/env';
-import { Client as NativeClient, ApiResponse, RequestParams } from '@elastic/elasticsearch';
+import { Client as NativeClient } from '@elastic/elasticsearch';
+import Configuration from '../config/configuration';
+const configuration = Configuration();
 const convertArrayToObject = (array: any, key: string) => {
     const initialValue = {};
     return array.reduce((obj: any, item: any) => {
@@ -11,8 +11,7 @@ const convertArrayToObject = (array: any, key: string) => {
     }, initialValue);
 };
 const client = new NativeClient({ 
-    node: 'http://localhost:9200'
-    // node: `http://${env.elastic.host}:${env.elastic.port}`
+    node: `http://${configuration.elastic.host}:${configuration.elastic.port}`
 });
 
 
