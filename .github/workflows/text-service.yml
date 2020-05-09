@@ -1,4 +1,4 @@
-name: text-service
+name: Text-service
 
 on: [push]
 
