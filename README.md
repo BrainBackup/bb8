@@ -27,22 +27,6 @@
 
 * process.env.NODE_ENV  - development, test and production - should be passed as env variable
 
-### local development without docker
-
-`cd auth-service && yarn start:dev`
-
-`cd mysql && docker-compose up`
-
-### Chrome extension
-
-* Side loading the chrome extension: go to chrome://extensions, click on Load unpacked, select the chrome-extension directoy
-* Open issue: the header should include `chrome-extension::` and follow up the subject of the issue.
-* TODO: Automatic way to update the app.
-
-### Test NLP service
-
-* MLQA reserch from Facebook® should be a good start.
-
 ### Authentication service
 
 * Require mysql: `cd mysql && docker-compose up`
@@ -56,3 +40,14 @@
 * Running locally: `cd text-service && yarn start:dev`
 * Swagger: go to `http://localhost:3009/api/`
 * Health check: `http://localhost:3009/health`
+
+### Chrome extension
+
+* Side loading the chrome extension: go to chrome://extensions, click on Load unpacked, select the chrome-extension directoy
+* Open issue: the header should include `chrome-extension::` and follow up the subject of the issue.
+* TODO: Automatic way to update the app.
+
+### Test NLP service
+
+* MLQA reserch from Facebook® should be a good start.
+
