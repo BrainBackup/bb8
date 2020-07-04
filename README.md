@@ -19,6 +19,12 @@
 
 ## Simple development process
 
+### YARN Workspaces
+
+adding dependency to a service:
+
+`yarn workspace web-ui add react`
+
 ### local development using docker
 
 `docker-compose build`

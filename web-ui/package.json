@@ -7,7 +7,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development --host 0.0.0.0 --hot --progress --colors --port 3003 --open",
+    "start": "webpack-dev-server --watch --mode development --host 0.0.0.0 --hot --progress --colors --port 3003 --open",
     "build": "webpack -p --progress --colors",
     "prettier": "prettier --write \"src/**/*.{ts,tsx,css}\"",
     "storybook": "start-storybook -p 9001 -c .storybook"
@@ -55,6 +55,7 @@
   "dependencies": {
     "@material-ui/core": "~4.9.0",
     "@material-ui/icons": "~4.5.1",
+    "antd": "^4.4.0",
     "axios": "^0.19.2",
     "classnames": "~2.2.6",
     "mobx": "~5.8.0",
