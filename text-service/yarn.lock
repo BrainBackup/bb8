@@ -318,6 +318,17 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@elastic/elasticsearch@^7.6.1":
+  version "7.10.0"
+  resolved "https://registry.yarnpkg.com/@elastic/elasticsearch/-/elasticsearch-7.10.0.tgz#da105a9c1f14146f9f2cab4e7026cb7949121b8d"
+  integrity sha512-vXtMAQf5/DwqeryQgRriMtnFppJNLc/R7/R0D8E+wG5/kGM5i7mg+Hi7TM4NZEuXgtzZ2a/Nf7aR0vLyrxOK/w==
+  dependencies:
+    debug "^4.1.1"
+    hpagent "^0.1.1"
+    ms "^2.1.1"
+    pump "^3.0.0"
+    secure-json-parse "^2.1.0"
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.0.0.tgz#10602de5570baea82f8afbfa2630b24e7a8cfe5b"
@@ -540,6 +551,17 @@
     tslib "1.11.1"
     uuid "7.0.3"
 
+"@nestjs/config@^0.4.1":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@nestjs/config/-/config-0.4.2.tgz#5f600d3fee7d029d826737db31b196e18bb8388f"
+  integrity sha512-0EaWYGkUrsyJWRESftd/Ns+0e1okyypCHfCQLY/LvtstjlkkO08+QO+z+j0i72xVe73CBHbwlm2quqWO66PVvQ==
+  dependencies:
+    dotenv "8.2.0"
+    dotenv-expand "5.1.0"
+    lodash.get "4.4.2"
+    lodash.set "4.3.2"
+    uuid "8.0.0"
+
 "@nestjs/core@^7.0.0":
   version "7.0.9"
   resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-7.0.9.tgz#7b17c0f844225fc38a24543f3ca598eb266ccb35"
@@ -552,6 +574,16 @@
     path-to-regexp "3.2.0"
     tslib "1.11.1"
     uuid "7.0.3"
+
+"@nestjs/elasticsearch@^7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/elasticsearch/-/elasticsearch-7.1.0.tgz#ba77a11d419b9aa542252a83b6490ef8c458fed4"
+  integrity sha512-3ixmu9MkTh0DS+LKAKcWHLyf/1DPQTXoy+aVClVI14DJQU208oHR3V0e9klApC+GXCYW+BDhNReh4HRyekjTrw==
+
+"@nestjs/mapped-types@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/mapped-types/-/mapped-types-0.1.1.tgz#2fa9ff0f1ddbe66d5d1c80ae59df21c0ed0d1361"
+  integrity sha512-FROYmmZ2F+tLJP/aHasPMX40iUHQPtEAzOAcfAp21baebN5iLUrdyTuphoXjIqubfPFSwtnAGpVm9kLJjQ//ig==
 
 "@nestjs/platform-express@^7.0.0":
   version "7.0.9"
@@ -572,6 +604,15 @@
     "@angular-devkit/core" "9.0.6"
     "@angular-devkit/schematics" "9.0.6"
     fs-extra "8.1.0"
+
+"@nestjs/swagger@^4.5.5":
+  version "4.7.5"
+  resolved "https://registry.yarnpkg.com/@nestjs/swagger/-/swagger-4.7.5.tgz#3f1ef36a81921decbbc384e46be2c515c63ce438"
+  integrity sha512-Qoj7lnvWoCIdJL50b85fdc+v2X9OY8HXaN9ngbBxAAfqLch0YfHgGdU95oBAtV6GYKbAGBqMCsmogr1TzWENwQ==
+  dependencies:
+    "@nestjs/mapped-types" "0.1.1"
+    lodash "4.17.20"
+    path-to-regexp "3.2.0"
 
 "@nestjs/testing@^7.0.0":
   version "7.0.9"
@@ -2302,6 +2343,16 @@ domexception@^1.0.1:
   dependencies:
     webidl-conversions "^4.0.2"
 
+dotenv-expand@5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/dotenv-expand/-/dotenv-expand-5.1.0.tgz#3fbaf020bfd794884072ea26b1e9791d45a629f0"
+  integrity sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA==
+
+dotenv@8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
+  integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
+
 duplexify@^3.4.2, duplexify@^3.6.0:
   version "3.7.1"
   resolved "https://registry.yarnpkg.com/duplexify/-/duplexify-3.7.1.tgz#2a4df5317f6ccfd91f86d6fd25d8d8a103b88309"
@@ -3282,6 +3333,11 @@ hosted-git-info@^2.1.4:
   version "2.8.8"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.8.tgz#7539bd4bc1e0e0a895815a2e0262420b12858488"
   integrity sha512-f/wzC2QaWBs7t9IYqB4T3sR1xviIViXJRJTWBlx2Gf3g0Xi5vI7Yy4koXQ1c9OYDGHN9sBy1DQ2AB8fqZBWhUg==
+
+hpagent@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/hpagent/-/hpagent-0.1.1.tgz#66f67f16e5c7a8b59a068e40c2658c2c749ad5e2"
+  integrity sha512-IxJWQiY0vmEjetHdoE9HZjD4Cx+mYTr25tR7JCxXaiI3QxW0YqYyM11KyZbHufoa/piWhMb2+D3FGpMgmA2cFQ==
 
 html-encoding-sniffer@^1.0.2:
   version "1.0.2"
@@ -4314,10 +4370,20 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
+lodash.get@4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
+
 lodash.memoize@4.x:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
+
+lodash.set@4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/lodash.set/-/lodash.set-4.3.2.tgz#d8757b1da807dde24816b0d6a84bea1a76230b23"
+  integrity sha1-2HV7HagH3eJIFrDWqEvqGnYjCyM=
 
 lodash.sortby@^4.7.0:
   version "4.7.0"
@@ -4329,10 +4395,10 @@ lodash.toarray@^4.4.0:
   resolved "https://registry.yarnpkg.com/lodash.toarray/-/lodash.toarray-4.4.0.tgz#24c4bfcd6b2fba38bfd0594db1179d8e9b656561"
   integrity sha1-JMS/zWsvuji/0FlNsRedjptlZWE=
 
-lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+lodash@4.17.20, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15:
+  version "4.17.20"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
+  integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
 
 log-symbols@^3.0.0:
   version "3.0.0"
@@ -5742,6 +5808,11 @@ schema-utils@^1.0.0:
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
+secure-json-parse@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/secure-json-parse/-/secure-json-parse-2.1.0.tgz#ae76f5624256b5c497af887090a5d9e156c9fb20"
+  integrity sha512-GckO+MS/wT4UogDyoI/H/S1L0MCcKS1XX/vp48wfmU7Nw4woBmb8mIpu4zPBQjKlRT88/bt9xdoV4111jPpNJA==
+
 "semver@2 || 3 || 4 || 5", semver@^5.4.1, semver@^5.5, semver@^5.5.0, semver@^5.6.0:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
@@ -6716,6 +6787,11 @@ uuid@7.0.3:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-7.0.3.tgz#c5c9f2c8cf25dc0a372c4df1441c41f5bd0c680b"
   integrity sha512-DPSke0pXhTZgoF/d+WSt2QaKMCFSfx7QegxEWT+JOuHF5aWrKEn0G+ztjuJg/gG8/ItK+rbPCD/yNv8yyih6Cg==
+
+uuid@8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.0.0.tgz#bc6ccf91b5ff0ac07bbcdbf1c7c4e150db4dbb6c"
+  integrity sha512-jOXGuXZAWdsTH7eZLtyXMqUb9EcWMGZNbL9YcGBJl4MH4nrxHmZJhEHvyLFrkxo+28uLb/NYRcStH48fnD0Vzw==
 
 uuid@^3.3.2:
   version "3.4.0"
