@@ -6049,10 +6049,10 @@ mz@^2.4.0:
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
 
-n@^6.6.0:
-  version "6.7.0"
-  resolved "https://registry.yarnpkg.com/n/-/n-6.7.0.tgz#95b4b5d338edb6959f2f4603400fcd093c372af1"
-  integrity sha512-l/pRcSEqR5PN7/j2Y5tY8KzW/tH0bVJ5UnceItO9mLjoHjNOaRc9cVkIUzUnfftQrcc5RXaqTRrtOPhQ9n10MQ==
+n@^6.7.1:
+  version "6.8.0"
+  resolved "https://registry.yarnpkg.com/n/-/n-6.8.0.tgz#2f619c09e2a12b16ecf96e17e89018273461ad69"
+  integrity sha512-SN8IwJfsJOx1FADDLcVH6hvXVSeQkha4gKgJQ7oDyMM0h2sYxBKvLNcNU5VnprKSqW8jL7pdvjMNIS4miQJSIA==
 
 nan@^2.12.1:
   version "2.14.0"
