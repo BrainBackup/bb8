@@ -30,7 +30,7 @@
     "@nestjs/jwt": "^7.0.0",
     "@nestjs/passport": "^7.1.5",
     "@nestjs/platform-express": "^7.6.6",
-    "@nestjs/swagger": "^4.7.10",
+    "@nestjs/swagger": "^4.7.13",
     "@nestjs/typeorm": "^7.1.5",
     "@types/passport-local": "^1.0.33",
     "mysql": "^2.18.1",
