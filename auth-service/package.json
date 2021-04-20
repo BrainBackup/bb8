@@ -44,7 +44,7 @@
     "rxjs": "^6.6.7",
     "snyk": "^1.518.0",
     "swagger-ui-express": "^4.1.6",
-    "typeorm": "^0.2.31"
+    "typeorm": "^0.2.32"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.0.0",
