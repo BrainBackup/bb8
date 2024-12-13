@@ -43,7 +43,7 @@
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.7",
     "snyk": "^1.611.0",
-    "swagger-ui-express": "^4.1.6",
+    "swagger-ui-express": "^4.2.0",
     "typeorm": "^0.2.33"
   },
   "devDependencies": {
